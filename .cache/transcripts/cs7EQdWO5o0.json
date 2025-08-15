@@ -1,0 +1,4801 @@
+{
+  "videoId": "cs7EQdWO5o0",
+  "cues": [
+    {
+      "start": 2.149,
+      "end": 2.159,
+      "text": "hey guys Colin here hope you well today"
+    },
+    {
+      "start": 2.159,
+      "end": 3.5,
+      "text": "hey guys Colin here hope you well today we're gonna take a look at a malicious"
+    },
+    {
+      "start": 3.5,
+      "end": 3.51,
+      "text": "we're gonna take a look at a malicious"
+    },
+    {
+      "start": 3.51,
+      "end": 4.94,
+      "text": "we're gonna take a look at a malicious JavaScript sample which is really"
+    },
+    {
+      "start": 4.94,
+      "end": 4.95,
+      "text": "JavaScript sample which is really"
+    },
+    {
+      "start": 4.95,
+      "end": 6.86,
+      "text": "JavaScript sample which is really interesting because has multiple layers"
+    },
+    {
+      "start": 6.86,
+      "end": 6.87,
+      "text": "interesting because has multiple layers"
+    },
+    {
+      "start": 6.87,
+      "end": 8.45,
+      "text": "interesting because has multiple layers of pack in that we need to work our way"
+    },
+    {
+      "start": 8.45,
+      "end": 8.46,
+      "text": "of pack in that we need to work our way"
+    },
+    {
+      "start": 8.46,
+      "end": 9.98,
+      "text": "of pack in that we need to work our way through in order to unravel what the"
+    },
+    {
+      "start": 9.98,
+      "end": 9.99,
+      "text": "through in order to unravel what the"
+    },
+    {
+      "start": 9.99,
+      "end": 11.93,
+      "text": "through in order to unravel what the JavaScript is designed to do it's also"
+    },
+    {
+      "start": 11.93,
+      "end": 11.94,
+      "text": "JavaScript is designed to do it's also"
+    },
+    {
+      "start": 11.94,
+      "end": 13.7,
+      "text": "JavaScript is designed to do it's also got a lot of junk code within it and we"
+    },
+    {
+      "start": 13.7,
+      "end": 13.71,
+      "text": "got a lot of junk code within it and we"
+    },
+    {
+      "start": 13.71,
+      "end": 14.839,
+      "text": "got a lot of junk code within it and we need to navigate our way through that"
+    },
+    {
+      "start": 14.839,
+      "end": 14.849,
+      "text": "need to navigate our way through that"
+    },
+    {
+      "start": 14.849,
+      "end": 16.519,
+      "text": "need to navigate our way through that junk code as well I'm going to show you"
+    },
+    {
+      "start": 16.519,
+      "end": 16.529,
+      "text": "junk code as well I'm going to show you"
+    },
+    {
+      "start": 16.529,
+      "end": 17.779,
+      "text": "junk code as well I'm going to show you some tools and techniques that you can"
+    },
+    {
+      "start": 17.779,
+      "end": 17.789,
+      "text": "some tools and techniques that you can"
+    },
+    {
+      "start": 17.789,
+      "end": 19.55,
+      "text": "some tools and techniques that you can use in your own environment including a"
+    },
+    {
+      "start": 19.55,
+      "end": 19.56,
+      "text": "use in your own environment including a"
+    },
+    {
+      "start": 19.56,
+      "end": 20.72,
+      "text": "use in your own environment including a second thing that I call the matching"
+    },
+    {
+      "start": 20.72,
+      "end": 20.73,
+      "text": "second thing that I call the matching"
+    },
+    {
+      "start": 20.73,
+      "end": 22.55,
+      "text": "second thing that I call the matching bracket methods where you can actually"
+    },
+    {
+      "start": 22.55,
+      "end": 22.56,
+      "text": "bracket methods where you can actually"
+    },
+    {
+      "start": 22.56,
+      "end": 23.66,
+      "text": "bracket methods where you can actually navigate your way through this code"
+    },
+    {
+      "start": 23.66,
+      "end": 23.67,
+      "text": "navigate your way through this code"
+    },
+    {
+      "start": 23.67,
+      "end": 25.49,
+      "text": "navigate your way through this code super super quickly without having to"
+    },
+    {
+      "start": 25.49,
+      "end": 25.5,
+      "text": "super super quickly without having to"
+    },
+    {
+      "start": 25.5,
+      "end": 27.05,
+      "text": "super super quickly without having to reverse engineer every single line of it"
+    },
+    {
+      "start": 27.05,
+      "end": 27.06,
+      "text": "reverse engineer every single line of it"
+    },
+    {
+      "start": 27.06,
+      "end": 28.67,
+      "text": "reverse engineer every single line of it so the sample we're gonna take a look at"
+    },
+    {
+      "start": 28.67,
+      "end": 28.68,
+      "text": "so the sample we're gonna take a look at"
+    },
+    {
+      "start": 28.68,
+      "end": 29.63,
+      "text": "so the sample we're gonna take a look at is here on virustotal"
+    },
+    {
+      "start": 29.63,
+      "end": 29.64,
+      "text": "is here on virustotal"
+    },
+    {
+      "start": 29.64,
+      "end": 31.519,
+      "text": "is here on virustotal you can see it's got a detection ratio"
+    },
+    {
+      "start": 31.519,
+      "end": 31.529,
+      "text": "you can see it's got a detection ratio"
+    },
+    {
+      "start": 31.529,
+      "end": 34.16,
+      "text": "you can see it's got a detection ratio of 0 out of 58 but trust me this sample"
+    },
+    {
+      "start": 34.16,
+      "end": 34.17,
+      "text": "of 0 out of 58 but trust me this sample"
+    },
+    {
+      "start": 34.17,
+      "end": 35.6,
+      "text": "of 0 out of 58 but trust me this sample is malicious despite the fact that what"
+    },
+    {
+      "start": 35.6,
+      "end": 35.61,
+      "text": "is malicious despite the fact that what"
+    },
+    {
+      "start": 35.61,
+      "end": 37.01,
+      "text": "is malicious despite the fact that what virustotal will tell you such reason"
+    },
+    {
+      "start": 37.01,
+      "end": 37.02,
+      "text": "virustotal will tell you such reason"
+    },
+    {
+      "start": 37.02,
+      "end": 38.75,
+      "text": "virustotal will tell you such reason with caution the sample is designed to"
+    },
+    {
+      "start": 38.75,
+      "end": 38.76,
+      "text": "with caution the sample is designed to"
+    },
+    {
+      "start": 38.76,
+      "end": 40.069,
+      "text": "with caution the sample is designed to reach out to the internet download it"
+    },
+    {
+      "start": 40.069,
+      "end": 40.079,
+      "text": "reach out to the internet download it"
+    },
+    {
+      "start": 40.079,
+      "end": 41.869,
+      "text": "reach out to the internet download it download an executable and then run that"
+    },
+    {
+      "start": 41.869,
+      "end": 41.879,
+      "text": "download an executable and then run that"
+    },
+    {
+      "start": 41.879,
+      "end": 43.459,
+      "text": "download an executable and then run that executable on your virtual machine and"
+    },
+    {
+      "start": 43.459,
+      "end": 43.469,
+      "text": "executable on your virtual machine and"
+    },
+    {
+      "start": 43.469,
+      "end": 45.35,
+      "text": "executable on your virtual machine and that will be the net wire-wrap malware"
+    },
+    {
+      "start": 45.35,
+      "end": 45.36,
+      "text": "that will be the net wire-wrap malware"
+    },
+    {
+      "start": 45.36,
+      "end": 46.58,
+      "text": "that will be the net wire-wrap malware and net why I rat is definitely"
+    },
+    {
+      "start": 46.58,
+      "end": 46.59,
+      "text": "and net why I rat is definitely"
+    },
+    {
+      "start": 46.59,
+      "end": 47.299,
+      "text": "and net why I rat is definitely something you don't want in your"
+    },
+    {
+      "start": 47.299,
+      "end": 47.309,
+      "text": "something you don't want in your"
+    },
+    {
+      "start": 47.309,
+      "end": 48.529,
+      "text": "something you don't want in your environment so please treat this"
+    },
+    {
+      "start": 48.529,
+      "end": 48.539,
+      "text": "environment so please treat this"
+    },
+    {
+      "start": 48.539,
+      "end": 50.84,
+      "text": "environment so please treat this JavaScript as malicious so let's have a"
+    },
+    {
+      "start": 50.84,
+      "end": 50.85,
+      "text": "JavaScript as malicious so let's have a"
+    },
+    {
+      "start": 50.85,
+      "end": 51.979,
+      "text": "JavaScript as malicious so let's have a look we'll get straight into the code"
+    },
+    {
+      "start": 51.979,
+      "end": 51.989,
+      "text": "look we'll get straight into the code"
+    },
+    {
+      "start": 51.989,
+      "end": 53.72,
+      "text": "look we'll get straight into the code I've got sublime text here you're going"
+    },
+    {
+      "start": 53.72,
+      "end": 53.73,
+      "text": "I've got sublime text here you're going"
+    },
+    {
+      "start": 53.73,
+      "end": 55.01,
+      "text": "I've got sublime text here you're going to need a package installed in sublime"
+    },
+    {
+      "start": 55.01,
+      "end": 55.02,
+      "text": "to need a package installed in sublime"
+    },
+    {
+      "start": 55.02,
+      "end": 56.81,
+      "text": "to need a package installed in sublime text to play along at home what you can"
+    },
+    {
+      "start": 56.81,
+      "end": 56.82,
+      "text": "text to play along at home what you can"
+    },
+    {
+      "start": 56.82,
+      "end": 58.31,
+      "text": "text to play along at home what you can do is go to tools go to command palette"
+    },
+    {
+      "start": 58.31,
+      "end": 58.32,
+      "text": "do is go to tools go to command palette"
+    },
+    {
+      "start": 58.32,
+      "end": 60.619,
+      "text": "do is go to tools go to command palette and type in install package press enter"
+    },
+    {
+      "start": 60.619,
+      "end": 60.629,
+      "text": "and type in install package press enter"
+    },
+    {
+      "start": 60.629,
+      "end": 62.15,
+      "text": "and type in install package press enter and then what you can do is search for"
+    },
+    {
+      "start": 62.15,
+      "end": 62.16,
+      "text": "and then what you can do is search for"
+    },
+    {
+      "start": 62.16,
+      "end": 64.219,
+      "text": "and then what you can do is search for the prettify plugin I know it doesn't"
+    },
+    {
+      "start": 64.219,
+      "end": 64.229,
+      "text": "the prettify plugin I know it doesn't"
+    },
+    {
+      "start": 64.229,
+      "end": 65.27,
+      "text": "the prettify plugin I know it doesn't show up in my list here because I've"
+    },
+    {
+      "start": 65.27,
+      "end": 65.28,
+      "text": "show up in my list here because I've"
+    },
+    {
+      "start": 65.28,
+      "end": 66.71,
+      "text": "show up in my list here because I've already got it installed but you will"
+    },
+    {
+      "start": 66.71,
+      "end": 66.72,
+      "text": "already got it installed but you will"
+    },
+    {
+      "start": 66.72,
+      "end": 68.51,
+      "text": "already got it installed but you will see prettify listed you can just select"
+    },
+    {
+      "start": 68.51,
+      "end": 68.52,
+      "text": "see prettify listed you can just select"
+    },
+    {
+      "start": 68.52,
+      "end": 70.219,
+      "text": "see prettify listed you can just select it and it will install that package for"
+    },
+    {
+      "start": 70.219,
+      "end": 70.229,
+      "text": "it and it will install that package for"
+    },
+    {
+      "start": 70.229,
+      "end": 70.58,
+      "text": "it and it will install that package for you"
+    },
+    {
+      "start": 70.58,
+      "end": 70.59,
+      "text": "you"
+    },
+    {
+      "start": 70.59,
+      "end": 71.87,
+      "text": "you and that will give you the ability to"
+    },
+    {
+      "start": 71.87,
+      "end": 71.88,
+      "text": "and that will give you the ability to"
+    },
+    {
+      "start": 71.88,
+      "end": 74.66,
+      "text": "and that will give you the ability to prettify HTML CSS and more importantly"
+    },
+    {
+      "start": 74.66,
+      "end": 74.67,
+      "text": "prettify HTML CSS and more importantly"
+    },
+    {
+      "start": 74.67,
+      "end": 77.33,
+      "text": "prettify HTML CSS and more importantly JavaScript code really really easily so"
+    },
+    {
+      "start": 77.33,
+      "end": 77.34,
+      "text": "JavaScript code really really easily so"
+    },
+    {
+      "start": 77.34,
+      "end": 79.01,
+      "text": "JavaScript code really really easily so I mean a highlight is text I'm gonna"
+    },
+    {
+      "start": 79.01,
+      "end": 79.02,
+      "text": "I mean a highlight is text I'm gonna"
+    },
+    {
+      "start": 79.02,
+      "end": 80.78,
+      "text": "I mean a highlight is text I'm gonna create a new file and paste it in I'm"
+    },
+    {
+      "start": 80.78,
+      "end": 80.79,
+      "text": "create a new file and paste it in I'm"
+    },
+    {
+      "start": 80.79,
+      "end": 82.91,
+      "text": "create a new file and paste it in I'm just going to call this copy J's for now"
+    },
+    {
+      "start": 82.91,
+      "end": 82.92,
+      "text": "just going to call this copy J's for now"
+    },
+    {
+      "start": 82.92,
+      "end": 84.679,
+      "text": "just going to call this copy J's for now and I'm gonna press command shift 8"
+    },
+    {
+      "start": 84.679,
+      "end": 84.689,
+      "text": "and I'm gonna press command shift 8"
+    },
+    {
+      "start": 84.689,
+      "end": 86.12,
+      "text": "and I'm gonna press command shift 8 which is a shortcut for the prettified"
+    },
+    {
+      "start": 86.12,
+      "end": 86.13,
+      "text": "which is a shortcut for the prettified"
+    },
+    {
+      "start": 86.13,
+      "end": 87.62,
+      "text": "which is a shortcut for the prettified plugin then that will prettify the"
+    },
+    {
+      "start": 87.62,
+      "end": 87.63,
+      "text": "plugin then that will prettify the"
+    },
+    {
+      "start": 87.63,
+      "end": 89.48,
+      "text": "plugin then that will prettify the JavaScript for me so I mean those it's"
+    },
+    {
+      "start": 89.48,
+      "end": 89.49,
+      "text": "JavaScript for me so I mean those it's"
+    },
+    {
+      "start": 89.49,
+      "end": 91.1,
+      "text": "JavaScript for me so I mean those it's control shift 8 run on a Mac its command"
+    },
+    {
+      "start": 91.1,
+      "end": 91.11,
+      "text": "control shift 8 run on a Mac its command"
+    },
+    {
+      "start": 91.11,
+      "end": 93.41,
+      "text": "control shift 8 run on a Mac its command shift H you can see it's pretty Fida for"
+    },
+    {
+      "start": 93.41,
+      "end": 93.42,
+      "text": "shift H you can see it's pretty Fida for"
+    },
+    {
+      "start": 93.42,
+      "end": 94.819,
+      "text": "shift H you can see it's pretty Fida for me give me some syntax highlighting"
+    },
+    {
+      "start": 94.819,
+      "end": 94.829,
+      "text": "me give me some syntax highlighting"
+    },
+    {
+      "start": 94.829,
+      "end": 96.8,
+      "text": "me give me some syntax highlighting that's great I'm just gonna put this on"
+    },
+    {
+      "start": 96.8,
+      "end": 96.81,
+      "text": "that's great I'm just gonna put this on"
+    },
+    {
+      "start": 96.81,
+      "end": 98.24,
+      "text": "that's great I'm just gonna put this on a new lines it's kind of like break up"
+    },
+    {
+      "start": 98.24,
+      "end": 98.25,
+      "text": "a new lines it's kind of like break up"
+    },
+    {
+      "start": 98.25,
+      "end": 99.499,
+      "text": "a new lines it's kind of like break up my functions a little bit to make it a"
+    },
+    {
+      "start": 99.499,
+      "end": 99.509,
+      "text": "my functions a little bit to make it a"
+    },
+    {
+      "start": 99.509,
+      "end": 100.94,
+      "text": "my functions a little bit to make it a little bit more readable press command"
+    },
+    {
+      "start": 100.94,
+      "end": 100.95,
+      "text": "little bit more readable press command"
+    },
+    {
+      "start": 100.95,
+      "end": 102.859,
+      "text": "little bit more readable press command shift hate again and it will again kind"
+    },
+    {
+      "start": 102.859,
+      "end": 102.869,
+      "text": "shift hate again and it will again kind"
+    },
+    {
+      "start": 102.869,
+      "end": 104.569,
+      "text": "shift hate again and it will again kind of take that syntax and just make it"
+    },
+    {
+      "start": 104.569,
+      "end": 104.579,
+      "text": "of take that syntax and just make it"
+    },
+    {
+      "start": 104.579,
+      "end": 106.069,
+      "text": "of take that syntax and just make it again a little bit more readable for us"
+    },
+    {
+      "start": 106.069,
+      "end": 106.079,
+      "text": "again a little bit more readable for us"
+    },
+    {
+      "start": 106.079,
+      "end": 108.2,
+      "text": "again a little bit more readable for us so we can see here the first line we"
+    },
+    {
+      "start": 108.2,
+      "end": 108.21,
+      "text": "so we can see here the first line we"
+    },
+    {
+      "start": 108.21,
+      "end": 110.12,
+      "text": "so we can see here the first line we have a call to eval and then within the"
+    },
+    {
+      "start": 110.12,
+      "end": 110.13,
+      "text": "have a call to eval and then within the"
+    },
+    {
+      "start": 110.13,
+      "end": 112.219,
+      "text": "have a call to eval and then within the body of the eval brackets we've got this"
+    },
+    {
+      "start": 112.219,
+      "end": 112.229,
+      "text": "body of the eval brackets we've got this"
+    },
+    {
+      "start": 112.229,
+      "end": 114.2,
+      "text": "body of the eval brackets we've got this function six parameters passed this"
+    },
+    {
+      "start": 114.2,
+      "end": 114.21,
+      "text": "function six parameters passed this"
+    },
+    {
+      "start": 114.21,
+      "end": 115.789,
+      "text": "function six parameters passed this function and that spells out the word"
+    },
+    {
+      "start": 115.789,
+      "end": 115.799,
+      "text": "function and that spells out the word"
+    },
+    {
+      "start": 115.799,
+      "end": 117.95,
+      "text": "function and that spells out the word Packer this is a common Packer which is"
+    },
+    {
+      "start": 117.95,
+      "end": 117.96,
+      "text": "Packer this is a common Packer which is"
+    },
+    {
+      "start": 117.96,
+      "end": 119.48,
+      "text": "Packer this is a common Packer which is used on the Internet to pack JavaScript"
+    },
+    {
+      "start": 119.48,
+      "end": 119.49,
+      "text": "used on the Internet to pack JavaScript"
+    },
+    {
+      "start": 119.49,
+      "end": 122.03,
+      "text": "used on the Internet to pack JavaScript and then we have some variables they're"
+    },
+    {
+      "start": 122.03,
+      "end": 122.04,
+      "text": "and then we have some variables they're"
+    },
+    {
+      "start": 122.04,
+      "end": 124.67,
+      "text": "and then we have some variables they're defined and also manipulated and we have"
+    },
+    {
+      "start": 124.67,
+      "end": 124.68,
+      "text": "defined and also manipulated and we have"
+    },
+    {
+      "start": 124.68,
+      "end": 126.709,
+      "text": "defined and also manipulated and we have all some parameters which are passed to"
+    },
+    {
+      "start": 126.709,
+      "end": 126.719,
+      "text": "all some parameters which are passed to"
+    },
+    {
+      "start": 126.719,
+      "end": 128.51,
+      "text": "all some parameters which are passed to the Packer function as well which has"
+    },
+    {
+      "start": 128.51,
+      "end": 128.52,
+      "text": "the Packer function as well which has"
+    },
+    {
+      "start": 128.52,
+      "end": 130.609,
+      "text": "the Packer function as well which has declared down it or defined down here so"
+    },
+    {
+      "start": 130.609,
+      "end": 130.619,
+      "text": "declared down it or defined down here so"
+    },
+    {
+      "start": 130.619,
+      "end": 132.199,
+      "text": "declared down it or defined down here so what we're actually interested in is the"
+    },
+    {
+      "start": 132.199,
+      "end": 132.209,
+      "text": "what we're actually interested in is the"
+    },
+    {
+      "start": 132.209,
+      "end": 133.23,
+      "text": "what we're actually interested in is the return value of this"
+    },
+    {
+      "start": 133.23,
+      "end": 133.24,
+      "text": "return value of this"
+    },
+    {
+      "start": 133.24,
+      "end": 135.12,
+      "text": "return value of this I can function two rather than return in"
+    },
+    {
+      "start": 135.12,
+      "end": 135.13,
+      "text": "I can function two rather than return in"
+    },
+    {
+      "start": 135.13,
+      "end": 136.83,
+      "text": "I can function two rather than return in the variable P which is the first"
+    },
+    {
+      "start": 136.83,
+      "end": 136.84,
+      "text": "the variable P which is the first"
+    },
+    {
+      "start": 136.84,
+      "end": 138.06,
+      "text": "the variable P which is the first parameter there's passed the function"
+    },
+    {
+      "start": 138.06,
+      "end": 138.07,
+      "text": "parameter there's passed the function"
+    },
+    {
+      "start": 138.07,
+      "end": 139.92,
+      "text": "parameter there's passed the function what we're gonna simply do it's just a"
+    },
+    {
+      "start": 139.92,
+      "end": 139.93,
+      "text": "what we're gonna simply do it's just a"
+    },
+    {
+      "start": 139.93,
+      "end": 141.54,
+      "text": "what we're gonna simply do it's just a console dot log and then we're going to"
+    },
+    {
+      "start": 141.54,
+      "end": 141.55,
+      "text": "console dot log and then we're going to"
+    },
+    {
+      "start": 141.55,
+      "end": 144.87,
+      "text": "console dot log and then we're going to put P in the brackets ahead save let's"
+    },
+    {
+      "start": 144.87,
+      "end": 144.88,
+      "text": "put P in the brackets ahead save let's"
+    },
+    {
+      "start": 144.88,
+      "end": 146.58,
+      "text": "put P in the brackets ahead save let's go to our terminal window and then we're"
+    },
+    {
+      "start": 146.58,
+      "end": 146.59,
+      "text": "go to our terminal window and then we're"
+    },
+    {
+      "start": 146.59,
+      "end": 149.22,
+      "text": "go to our terminal window and then we're going to run no dot node copy and then"
+    },
+    {
+      "start": 149.22,
+      "end": 149.23,
+      "text": "going to run no dot node copy and then"
+    },
+    {
+      "start": 149.23,
+      "end": 150.48,
+      "text": "going to run no dot node copy and then we can see we get a load more code"
+    },
+    {
+      "start": 150.48,
+      "end": 150.49,
+      "text": "we can see we get a load more code"
+    },
+    {
+      "start": 150.49,
+      "end": 151.89,
+      "text": "we can see we get a load more code that's output I can't really read it in"
+    },
+    {
+      "start": 151.89,
+      "end": 151.9,
+      "text": "that's output I can't really read it in"
+    },
+    {
+      "start": 151.9,
+      "end": 152.88,
+      "text": "that's output I can't really read it in the terminal window so I'm going to"
+    },
+    {
+      "start": 152.88,
+      "end": 152.89,
+      "text": "the terminal window so I'm going to"
+    },
+    {
+      "start": 152.89,
+      "end": 155.67,
+      "text": "the terminal window so I'm going to redirect this to one rjs and let's open"
+    },
+    {
+      "start": 155.67,
+      "end": 155.68,
+      "text": "redirect this to one rjs and let's open"
+    },
+    {
+      "start": 155.68,
+      "end": 157.38,
+      "text": "redirect this to one rjs and let's open one by j s and we can see what we're"
+    },
+    {
+      "start": 157.38,
+      "end": 157.39,
+      "text": "one by j s and we can see what we're"
+    },
+    {
+      "start": 157.39,
+      "end": 161.16,
+      "text": "one by j s and we can see what we're left with press command T of tempt or"
+    },
+    {
+      "start": 161.16,
+      "end": 161.17,
+      "text": "left with press command T of tempt or"
+    },
+    {
+      "start": 161.17,
+      "end": 162.51,
+      "text": "left with press command T of tempt or control shift 8 if you're on Windows"
+    },
+    {
+      "start": 162.51,
+      "end": 162.52,
+      "text": "control shift 8 if you're on Windows"
+    },
+    {
+      "start": 162.52,
+      "end": 164.07,
+      "text": "control shift 8 if you're on Windows again and we'll just get it prettified"
+    },
+    {
+      "start": 164.07,
+      "end": 164.08,
+      "text": "again and we'll just get it prettified"
+    },
+    {
+      "start": 164.08,
+      "end": 165.9,
+      "text": "again and we'll just get it prettified I'm going to tidy it up a little bit as"
+    },
+    {
+      "start": 165.9,
+      "end": 165.91,
+      "text": "I'm going to tidy it up a little bit as"
+    },
+    {
+      "start": 165.91,
+      "end": 167.91,
+      "text": "I'm going to tidy it up a little bit as well press command shift 8 again and we"
+    },
+    {
+      "start": 167.91,
+      "end": 167.92,
+      "text": "well press command shift 8 again and we"
+    },
+    {
+      "start": 167.92,
+      "end": 168.93,
+      "text": "well press command shift 8 again and we can see here we've got a very very"
+    },
+    {
+      "start": 168.93,
+      "end": 168.94,
+      "text": "can see here we've got a very very"
+    },
+    {
+      "start": 168.94,
+      "end": 170.46,
+      "text": "can see here we've got a very very similar function we've got a call to"
+    },
+    {
+      "start": 170.46,
+      "end": 170.47,
+      "text": "similar function we've got a call to"
+    },
+    {
+      "start": 170.47,
+      "end": 171.87,
+      "text": "similar function we've got a call to eval we've got a function which takes"
+    },
+    {
+      "start": 171.87,
+      "end": 171.88,
+      "text": "eval we've got a function which takes"
+    },
+    {
+      "start": 171.88,
+      "end": 173.82,
+      "text": "eval we've got a function which takes six parameters some string manipulation"
+    },
+    {
+      "start": 173.82,
+      "end": 173.83,
+      "text": "six parameters some string manipulation"
+    },
+    {
+      "start": 173.83,
+      "end": 175.65,
+      "text": "six parameters some string manipulation and then it's returning the first"
+    },
+    {
+      "start": 175.65,
+      "end": 175.66,
+      "text": "and then it's returning the first"
+    },
+    {
+      "start": 175.66,
+      "end": 177.06,
+      "text": "and then it's returning the first parameter that's passed to the function"
+    },
+    {
+      "start": 177.06,
+      "end": 177.07,
+      "text": "parameter that's passed to the function"
+    },
+    {
+      "start": 177.07,
+      "end": 180.42,
+      "text": "parameter that's passed to the function which is in this case the variable be a"
+    },
+    {
+      "start": 180.42,
+      "end": 180.43,
+      "text": "which is in this case the variable be a"
+    },
+    {
+      "start": 180.43,
+      "end": 182.07,
+      "text": "which is in this case the variable be a little bit different we have a single"
+    },
+    {
+      "start": 182.07,
+      "end": 182.08,
+      "text": "little bit different we have a single"
+    },
+    {
+      "start": 182.08,
+      "end": 183.78,
+      "text": "little bit different we have a single line of code here on the top which is"
+    },
+    {
+      "start": 183.78,
+      "end": 183.79,
+      "text": "line of code here on the top which is"
+    },
+    {
+      "start": 183.79,
+      "end": 186.27,
+      "text": "line of code here on the top which is defining an array and that array is also"
+    },
+    {
+      "start": 186.27,
+      "end": 186.28,
+      "text": "defining an array and that array is also"
+    },
+    {
+      "start": 186.28,
+      "end": 187.56,
+      "text": "defining an array and that array is also being new and the reason why I spend"
+    },
+    {
+      "start": 187.56,
+      "end": 187.57,
+      "text": "being new and the reason why I spend"
+    },
+    {
+      "start": 187.57,
+      "end": 189.78,
+      "text": "being new and the reason why I spend define is because entries in that array"
+    },
+    {
+      "start": 189.78,
+      "end": 189.79,
+      "text": "define is because entries in that array"
+    },
+    {
+      "start": 189.79,
+      "end": 191.58,
+      "text": "define is because entries in that array as well as some other integer values are"
+    },
+    {
+      "start": 191.58,
+      "end": 191.59,
+      "text": "as well as some other integer values are"
+    },
+    {
+      "start": 191.59,
+      "end": 194.13,
+      "text": "as well as some other integer values are being passed as parameters into that"
+    },
+    {
+      "start": 194.13,
+      "end": 194.14,
+      "text": "being passed as parameters into that"
+    },
+    {
+      "start": 194.14,
+      "end": 196.23,
+      "text": "being passed as parameters into that foot into that Packer function so this"
+    },
+    {
+      "start": 196.23,
+      "end": 196.24,
+      "text": "foot into that Packer function so this"
+    },
+    {
+      "start": 196.24,
+      "end": 197.79,
+      "text": "foot into that Packer function so this is the same function that we saw in copy"
+    },
+    {
+      "start": 197.79,
+      "end": 197.8,
+      "text": "is the same function that we saw in copy"
+    },
+    {
+      "start": 197.8,
+      "end": 199.77,
+      "text": "is the same function that we saw in copy j/s it's just got different variable"
+    },
+    {
+      "start": 199.77,
+      "end": 199.78,
+      "text": "j/s it's just got different variable"
+    },
+    {
+      "start": 199.78,
+      "end": 201.45,
+      "text": "j/s it's just got different variable names and so we can we're gonna do"
+    },
+    {
+      "start": 201.45,
+      "end": 201.46,
+      "text": "names and so we can we're gonna do"
+    },
+    {
+      "start": 201.46,
+      "end": 202.68,
+      "text": "names and so we can we're gonna do exactly the same thing instead of"
+    },
+    {
+      "start": 202.68,
+      "end": 202.69,
+      "text": "exactly the same thing instead of"
+    },
+    {
+      "start": 202.69,
+      "end": 205.62,
+      "text": "exactly the same thing instead of returning B will do console dot log B"
+    },
+    {
+      "start": 205.62,
+      "end": 205.63,
+      "text": "returning B will do console dot log B"
+    },
+    {
+      "start": 205.63,
+      "end": 208.17,
+      "text": "returning B will do console dot log B put the B in the brackets hit save go to"
+    },
+    {
+      "start": 208.17,
+      "end": 208.18,
+      "text": "put the B in the brackets hit save go to"
+    },
+    {
+      "start": 208.18,
+      "end": 210.93,
+      "text": "put the B in the brackets hit save go to a terminal window and run one rjs we can"
+    },
+    {
+      "start": 210.93,
+      "end": 210.94,
+      "text": "a terminal window and run one rjs we can"
+    },
+    {
+      "start": 210.94,
+      "end": 212.43,
+      "text": "a terminal window and run one rjs we can see we get more code so let me output"
+    },
+    {
+      "start": 212.43,
+      "end": 212.44,
+      "text": "see we get more code so let me output"
+    },
+    {
+      "start": 212.44,
+      "end": 215.73,
+      "text": "see we get more code so let me output that to to Jess go back to the terminal"
+    },
+    {
+      "start": 215.73,
+      "end": 215.74,
+      "text": "that to to Jess go back to the terminal"
+    },
+    {
+      "start": 215.74,
+      "end": 217.56,
+      "text": "that to to Jess go back to the terminal window go out to the sublime that's open"
+    },
+    {
+      "start": 217.56,
+      "end": 217.57,
+      "text": "window go out to the sublime that's open"
+    },
+    {
+      "start": 217.57,
+      "end": 218.37,
+      "text": "window go out to the sublime that's open to Jess"
+    },
+    {
+      "start": 218.37,
+      "end": 218.38,
+      "text": "to Jess"
+    },
+    {
+      "start": 218.38,
+      "end": 220.95,
+      "text": "to Jess come on shift H and we could see we're"
+    },
+    {
+      "start": 220.95,
+      "end": 220.96,
+      "text": "come on shift H and we could see we're"
+    },
+    {
+      "start": 220.96,
+      "end": 222.3,
+      "text": "come on shift H and we could see we're actually got a lot more JavaScript which"
+    },
+    {
+      "start": 222.3,
+      "end": 222.31,
+      "text": "actually got a lot more JavaScript which"
+    },
+    {
+      "start": 222.31,
+      "end": 224.46,
+      "text": "actually got a lot more JavaScript which looks very very noisy indeed when I tidy"
+    },
+    {
+      "start": 224.46,
+      "end": 224.47,
+      "text": "looks very very noisy indeed when I tidy"
+    },
+    {
+      "start": 224.47,
+      "end": 225.81,
+      "text": "looks very very noisy indeed when I tidy up the function calls again just a"
+    },
+    {
+      "start": 225.81,
+      "end": 225.82,
+      "text": "up the function calls again just a"
+    },
+    {
+      "start": 225.82,
+      "end": 227.25,
+      "text": "up the function calls again just a little bit so I just like a new line"
+    },
+    {
+      "start": 227.25,
+      "end": 227.26,
+      "text": "little bit so I just like a new line"
+    },
+    {
+      "start": 227.26,
+      "end": 228.87,
+      "text": "little bit so I just like a new line after my opening brackets press command"
+    },
+    {
+      "start": 228.87,
+      "end": 228.88,
+      "text": "after my opening brackets press command"
+    },
+    {
+      "start": 228.88,
+      "end": 231.12,
+      "text": "after my opening brackets press command shift H and not just again just tidy it"
+    },
+    {
+      "start": 231.12,
+      "end": 231.13,
+      "text": "shift H and not just again just tidy it"
+    },
+    {
+      "start": 231.13,
+      "end": 232.5,
+      "text": "shift H and not just again just tidy it up give me a few more line breaks just"
+    },
+    {
+      "start": 232.5,
+      "end": 232.51,
+      "text": "up give me a few more line breaks just"
+    },
+    {
+      "start": 232.51,
+      "end": 234,
+      "text": "up give me a few more line breaks just to again make things a little bit more"
+    },
+    {
+      "start": 234,
+      "end": 234.01,
+      "text": "to again make things a little bit more"
+    },
+    {
+      "start": 234.01,
+      "end": 235.65,
+      "text": "to again make things a little bit more readable but go right to the bottom we"
+    },
+    {
+      "start": 235.65,
+      "end": 235.66,
+      "text": "readable but go right to the bottom we"
+    },
+    {
+      "start": 235.66,
+      "end": 236.88,
+      "text": "readable but go right to the bottom we can see I've got like four thousand"
+    },
+    {
+      "start": 236.88,
+      "end": 236.89,
+      "text": "can see I've got like four thousand"
+    },
+    {
+      "start": 236.89,
+      "end": 238.65,
+      "text": "can see I've got like four thousand three hundred lines of JavaScript that"
+    },
+    {
+      "start": 238.65,
+      "end": 238.66,
+      "text": "three hundred lines of JavaScript that"
+    },
+    {
+      "start": 238.66,
+      "end": 240.09,
+      "text": "three hundred lines of JavaScript that would be very very tedious for us to"
+    },
+    {
+      "start": 240.09,
+      "end": 240.1,
+      "text": "would be very very tedious for us to"
+    },
+    {
+      "start": 240.1,
+      "end": 241.74,
+      "text": "would be very very tedious for us to reverse engineer so we'll just step"
+    },
+    {
+      "start": 241.74,
+      "end": 241.75,
+      "text": "reverse engineer so we'll just step"
+    },
+    {
+      "start": 241.75,
+      "end": 243.21,
+      "text": "reverse engineer so we'll just step through it and I'll show you this much"
+    },
+    {
+      "start": 243.21,
+      "end": 243.22,
+      "text": "through it and I'll show you this much"
+    },
+    {
+      "start": 243.22,
+      "end": 244.77,
+      "text": "through it and I'll show you this much in bracket technique that I like to use"
+    },
+    {
+      "start": 244.77,
+      "end": 244.78,
+      "text": "in bracket technique that I like to use"
+    },
+    {
+      "start": 244.78,
+      "end": 246.27,
+      "text": "in bracket technique that I like to use in order to skip through code really"
+    },
+    {
+      "start": 246.27,
+      "end": 246.28,
+      "text": "in order to skip through code really"
+    },
+    {
+      "start": 246.28,
+      "end": 246.96,
+      "text": "in order to skip through code really really quickly"
+    },
+    {
+      "start": 246.96,
+      "end": 246.97,
+      "text": "really quickly"
+    },
+    {
+      "start": 246.97,
+      "end": 248.61,
+      "text": "really quickly so you can see the first two lines right"
+    },
+    {
+      "start": 248.61,
+      "end": 248.62,
+      "text": "so you can see the first two lines right"
+    },
+    {
+      "start": 248.62,
+      "end": 250.47,
+      "text": "so you can see the first two lines right JavaScript will execute top down left to"
+    },
+    {
+      "start": 250.47,
+      "end": 250.48,
+      "text": "JavaScript will execute top down left to"
+    },
+    {
+      "start": 250.48,
+      "end": 252.63,
+      "text": "JavaScript will execute top down left to right so the first variable is an array"
+    },
+    {
+      "start": 252.63,
+      "end": 252.64,
+      "text": "right so the first variable is an array"
+    },
+    {
+      "start": 252.64,
+      "end": 253.71,
+      "text": "right so the first variable is an array which has been defined so that's"
+    },
+    {
+      "start": 253.71,
+      "end": 253.72,
+      "text": "which has been defined so that's"
+    },
+    {
+      "start": 253.72,
+      "end": 255.51,
+      "text": "which has been defined so that's definitely going to execute the second"
+    },
+    {
+      "start": 255.51,
+      "end": 255.52,
+      "text": "definitely going to execute the second"
+    },
+    {
+      "start": 255.52,
+      "end": 257.01,
+      "text": "definitely going to execute the second line is another array doesn't have a"
+    },
+    {
+      "start": 257.01,
+      "end": 257.02,
+      "text": "line is another array doesn't have a"
+    },
+    {
+      "start": 257.02,
+      "end": 258.27,
+      "text": "line is another array doesn't have a name but it's going to be defined as"
+    },
+    {
+      "start": 258.27,
+      "end": 258.28,
+      "text": "name but it's going to be defined as"
+    },
+    {
+      "start": 258.28,
+      "end": 259.89,
+      "text": "name but it's going to be defined as well and that reference is some of the"
+    },
+    {
+      "start": 259.89,
+      "end": 259.9,
+      "text": "well and that reference is some of the"
+    },
+    {
+      "start": 259.9,
+      "end": 262.02,
+      "text": "well and that reference is some of the values of the first array and this might"
+    },
+    {
+      "start": 262.02,
+      "end": 262.03,
+      "text": "values of the first array and this might"
+    },
+    {
+      "start": 262.03,
+      "end": 263.34,
+      "text": "values of the first array and this might be noise right so let me just copy out"
+    },
+    {
+      "start": 263.34,
+      "end": 263.35,
+      "text": "be noise right so let me just copy out"
+    },
+    {
+      "start": 263.35,
+      "end": 264.99,
+      "text": "be noise right so let me just copy out and were to see what those actually"
+    },
+    {
+      "start": 264.99,
+      "end": 265,
+      "text": "and were to see what those actually"
+    },
+    {
+      "start": 265,
+      "end": 266.07,
+      "text": "and were to see what those actually equate to let me just put"
+    },
+    {
+      "start": 266.07,
+      "end": 266.08,
+      "text": "equate to let me just put"
+    },
+    {
+      "start": 266.08,
+      "end": 267.54,
+      "text": "equate to let me just put in a different file I'm gonna call this"
+    },
+    {
+      "start": 267.54,
+      "end": 267.55,
+      "text": "in a different file I'm gonna call this"
+    },
+    {
+      "start": 267.55,
+      "end": 269.7,
+      "text": "in a different file I'm gonna call this test on Jace for now and I'm gonna"
+    },
+    {
+      "start": 269.7,
+      "end": 269.71,
+      "text": "test on Jace for now and I'm gonna"
+    },
+    {
+      "start": 269.71,
+      "end": 272.939,
+      "text": "test on Jace for now and I'm gonna console that log the value of the second"
+    },
+    {
+      "start": 272.939,
+      "end": 272.949,
+      "text": "console that log the value of the second"
+    },
+    {
+      "start": 272.949,
+      "end": 275.969,
+      "text": "console that log the value of the second array I'll hit save go to my terminal"
+    },
+    {
+      "start": 275.969,
+      "end": 275.979,
+      "text": "array I'll hit save go to my terminal"
+    },
+    {
+      "start": 275.979,
+      "end": 279.27,
+      "text": "array I'll hit save go to my terminal window do no tests and we can see here"
+    },
+    {
+      "start": 279.27,
+      "end": 279.28,
+      "text": "window do no tests and we can see here"
+    },
+    {
+      "start": 279.28,
+      "end": 280.89,
+      "text": "window do no tests and we can see here right we've got all of this like JSON"
+    },
+    {
+      "start": 280.89,
+      "end": 280.9,
+      "text": "right we've got all of this like JSON"
+    },
+    {
+      "start": 280.9,
+      "end": 284.279,
+      "text": "right we've got all of this like JSON like syntax with kind of profile"
+    },
+    {
+      "start": 284.279,
+      "end": 284.289,
+      "text": "like syntax with kind of profile"
+    },
+    {
+      "start": 284.289,
+      "end": 287.7,
+      "text": "like syntax with kind of profile information with like placeholder text"
+    },
+    {
+      "start": 287.7,
+      "end": 287.71,
+      "text": "information with like placeholder text"
+    },
+    {
+      "start": 287.71,
+      "end": 289.98,
+      "text": "information with like placeholder text and placeholder URLs and stuff like that"
+    },
+    {
+      "start": 289.98,
+      "end": 289.99,
+      "text": "and placeholder URLs and stuff like that"
+    },
+    {
+      "start": 289.99,
+      "end": 291.659,
+      "text": "and placeholder URLs and stuff like that and this is all noise right this is part"
+    },
+    {
+      "start": 291.659,
+      "end": 291.669,
+      "text": "and this is all noise right this is part"
+    },
+    {
+      "start": 291.669,
+      "end": 293.279,
+      "text": "and this is all noise right this is part of the noise that the bad guys have"
+    },
+    {
+      "start": 293.279,
+      "end": 293.289,
+      "text": "of the noise that the bad guys have"
+    },
+    {
+      "start": 293.289,
+      "end": 295.77,
+      "text": "of the noise that the bad guys have injected into this particular code so"
+    },
+    {
+      "start": 295.77,
+      "end": 295.78,
+      "text": "injected into this particular code so"
+    },
+    {
+      "start": 295.78,
+      "end": 297.3,
+      "text": "injected into this particular code so anyway let's ignore it those two lines"
+    },
+    {
+      "start": 297.3,
+      "end": 297.31,
+      "text": "anyway let's ignore it those two lines"
+    },
+    {
+      "start": 297.31,
+      "end": 299.279,
+      "text": "anyway let's ignore it those two lines are gonna get executed and on line four"
+    },
+    {
+      "start": 299.279,
+      "end": 299.289,
+      "text": "are gonna get executed and on line four"
+    },
+    {
+      "start": 299.289,
+      "end": 301.05,
+      "text": "are gonna get executed and on line four here we have a function which has been"
+    },
+    {
+      "start": 301.05,
+      "end": 301.06,
+      "text": "here we have a function which has been"
+    },
+    {
+      "start": 301.06,
+      "end": 302.67,
+      "text": "here we have a function which has been defined and then a load of code within"
+    },
+    {
+      "start": 302.67,
+      "end": 302.68,
+      "text": "defined and then a load of code within"
+    },
+    {
+      "start": 302.68,
+      "end": 304.8,
+      "text": "defined and then a load of code within the function well I don't really want to"
+    },
+    {
+      "start": 304.8,
+      "end": 304.81,
+      "text": "the function well I don't really want to"
+    },
+    {
+      "start": 304.81,
+      "end": 306.33,
+      "text": "the function well I don't really want to reverse engineer all this all this"
+    },
+    {
+      "start": 306.33,
+      "end": 306.34,
+      "text": "reverse engineer all this all this"
+    },
+    {
+      "start": 306.34,
+      "end": 308.1,
+      "text": "reverse engineer all this all this horrible looking code what I want to"
+    },
+    {
+      "start": 308.1,
+      "end": 308.11,
+      "text": "horrible looking code what I want to"
+    },
+    {
+      "start": 308.11,
+      "end": 309.93,
+      "text": "horrible looking code what I want to find is what reference this is function"
+    },
+    {
+      "start": 309.93,
+      "end": 309.94,
+      "text": "find is what reference this is function"
+    },
+    {
+      "start": 309.94,
+      "end": 312.24,
+      "text": "find is what reference this is function let me copy it press ctrl + F and paste"
+    },
+    {
+      "start": 312.24,
+      "end": 312.25,
+      "text": "let me copy it press ctrl + F and paste"
+    },
+    {
+      "start": 312.25,
+      "end": 314.459,
+      "text": "let me copy it press ctrl + F and paste it in here I'm gonna press ENTER and we"
+    },
+    {
+      "start": 314.459,
+      "end": 314.469,
+      "text": "it in here I'm gonna press ENTER and we"
+    },
+    {
+      "start": 314.469,
+      "end": 315.809,
+      "text": "it in here I'm gonna press ENTER and we could see that the only reference this"
+    },
+    {
+      "start": 315.809,
+      "end": 315.819,
+      "text": "could see that the only reference this"
+    },
+    {
+      "start": 315.819,
+      "end": 317.49,
+      "text": "could see that the only reference this function is actually the function that's"
+    },
+    {
+      "start": 317.49,
+      "end": 317.5,
+      "text": "function is actually the function that's"
+    },
+    {
+      "start": 317.5,
+      "end": 319.05,
+      "text": "function is actually the function that's being defined so it's not actually being"
+    },
+    {
+      "start": 319.05,
+      "end": 319.06,
+      "text": "being defined so it's not actually being"
+    },
+    {
+      "start": 319.06,
+      "end": 321.029,
+      "text": "being defined so it's not actually being called anywhere in the code so that's"
+    },
+    {
+      "start": 321.029,
+      "end": 321.039,
+      "text": "called anywhere in the code so that's"
+    },
+    {
+      "start": 321.039,
+      "end": 322.8,
+      "text": "called anywhere in the code so that's great we know it's noise it's not being"
+    },
+    {
+      "start": 322.8,
+      "end": 322.81,
+      "text": "great we know it's noise it's not being"
+    },
+    {
+      "start": 322.81,
+      "end": 324.779,
+      "text": "great we know it's noise it's not being referenced anywhere let's skip past it"
+    },
+    {
+      "start": 324.779,
+      "end": 324.789,
+      "text": "referenced anywhere let's skip past it"
+    },
+    {
+      "start": 324.789,
+      "end": 326.58,
+      "text": "referenced anywhere let's skip past it well we've got the Open bracket here"
+    },
+    {
+      "start": 326.58,
+      "end": 326.59,
+      "text": "well we've got the Open bracket here"
+    },
+    {
+      "start": 326.59,
+      "end": 329.429,
+      "text": "well we've got the Open bracket here after the function declaration what we"
+    },
+    {
+      "start": 329.429,
+      "end": 329.439,
+      "text": "after the function declaration what we"
+    },
+    {
+      "start": 329.439,
+      "end": 330.99,
+      "text": "after the function declaration what we want to do is find the closing bracket"
+    },
+    {
+      "start": 330.99,
+      "end": 331,
+      "text": "want to do is find the closing bracket"
+    },
+    {
+      "start": 331,
+      "end": 332.459,
+      "text": "want to do is find the closing bracket so this is the match in bracket"
+    },
+    {
+      "start": 332.459,
+      "end": 332.469,
+      "text": "so this is the match in bracket"
+    },
+    {
+      "start": 332.469,
+      "end": 334.08,
+      "text": "so this is the match in bracket technique if you wanted to you could"
+    },
+    {
+      "start": 334.08,
+      "end": 334.09,
+      "text": "technique if you wanted to you could"
+    },
+    {
+      "start": 334.09,
+      "end": 335.49,
+      "text": "technique if you wanted to you could scroll through and you can kind of guess"
+    },
+    {
+      "start": 335.49,
+      "end": 335.5,
+      "text": "scroll through and you can kind of guess"
+    },
+    {
+      "start": 335.5,
+      "end": 337.35,
+      "text": "scroll through and you can kind of guess your way through it or you can kind of"
+    },
+    {
+      "start": 337.35,
+      "end": 337.36,
+      "text": "your way through it or you can kind of"
+    },
+    {
+      "start": 337.36,
+      "end": 338.82,
+      "text": "your way through it or you can kind of work your way and keep track of all the"
+    },
+    {
+      "start": 338.82,
+      "end": 338.83,
+      "text": "work your way and keep track of all the"
+    },
+    {
+      "start": 338.83,
+      "end": 340.409,
+      "text": "work your way and keep track of all the brackets the easiest way to do it"
+    },
+    {
+      "start": 340.409,
+      "end": 340.419,
+      "text": "brackets the easiest way to do it"
+    },
+    {
+      "start": 340.419,
+      "end": 342.029,
+      "text": "brackets the easiest way to do it sublime text gives you a super super"
+    },
+    {
+      "start": 342.029,
+      "end": 342.039,
+      "text": "sublime text gives you a super super"
+    },
+    {
+      "start": 342.039,
+      "end": 344.879,
+      "text": "sublime text gives you a super super handy shortcut which is control + M even"
+    },
+    {
+      "start": 344.879,
+      "end": 344.889,
+      "text": "handy shortcut which is control + M even"
+    },
+    {
+      "start": 344.889,
+      "end": 346.709,
+      "text": "handy shortcut which is control + M even if you're on a Mac this is ctrl + M same"
+    },
+    {
+      "start": 346.709,
+      "end": 346.719,
+      "text": "if you're on a Mac this is ctrl + M same"
+    },
+    {
+      "start": 346.719,
+      "end": 348.54,
+      "text": "if you're on a Mac this is ctrl + M same for windows ctrl + em it's not commander"
+    },
+    {
+      "start": 348.54,
+      "end": 348.55,
+      "text": "for windows ctrl + em it's not commander"
+    },
+    {
+      "start": 348.55,
+      "end": 350.85,
+      "text": "for windows ctrl + em it's not commander name it's ctrl + M you press ctrl + M"
+    },
+    {
+      "start": 350.85,
+      "end": 350.86,
+      "text": "name it's ctrl + M you press ctrl + M"
+    },
+    {
+      "start": 350.86,
+      "end": 353.01,
+      "text": "name it's ctrl + M you press ctrl + M you'll find the matching bracket in this"
+    },
+    {
+      "start": 353.01,
+      "end": 353.02,
+      "text": "you'll find the matching bracket in this"
+    },
+    {
+      "start": 353.02,
+      "end": 355.2,
+      "text": "you'll find the matching bracket in this case the matching bracket is on line 5 4"
+    },
+    {
+      "start": 355.2,
+      "end": 355.21,
+      "text": "case the matching bracket is on line 5 4"
+    },
+    {
+      "start": 355.21,
+      "end": 357.24,
+      "text": "case the matching bracket is on line 5 4 3 I definitely wouldn't have scroll"
+    },
+    {
+      "start": 357.24,
+      "end": 357.25,
+      "text": "3 I definitely wouldn't have scroll"
+    },
+    {
+      "start": 357.25,
+      "end": 358.8,
+      "text": "3 I definitely wouldn't have scroll through 500 odd lines of code and"
+    },
+    {
+      "start": 358.8,
+      "end": 358.81,
+      "text": "through 500 odd lines of code and"
+    },
+    {
+      "start": 358.81,
+      "end": 360.059,
+      "text": "through 500 odd lines of code and realized that my matching bracket was"
+    },
+    {
+      "start": 360.059,
+      "end": 360.069,
+      "text": "realized that my matching bracket was"
+    },
+    {
+      "start": 360.069,
+      "end": 361.86,
+      "text": "realized that my matching bracket was down there press ctrl + M you'll go back"
+    },
+    {
+      "start": 361.86,
+      "end": 361.87,
+      "text": "down there press ctrl + M you'll go back"
+    },
+    {
+      "start": 361.87,
+      "end": 363.719,
+      "text": "down there press ctrl + M you'll go back to the top so again we'll go down to the"
+    },
+    {
+      "start": 363.719,
+      "end": 363.729,
+      "text": "to the top so again we'll go down to the"
+    },
+    {
+      "start": 363.729,
+      "end": 366.149,
+      "text": "to the top so again we'll go down to the bottom line 5 4 3 everything those five"
+    },
+    {
+      "start": 366.149,
+      "end": 366.159,
+      "text": "bottom line 5 4 3 everything those five"
+    },
+    {
+      "start": 366.159,
+      "end": 367.769,
+      "text": "bottom line 5 4 3 everything those five ones on lines of code I can now ignore"
+    },
+    {
+      "start": 367.769,
+      "end": 367.779,
+      "text": "ones on lines of code I can now ignore"
+    },
+    {
+      "start": 367.779,
+      "end": 369.99,
+      "text": "ones on lines of code I can now ignore happy days so the next line is a"
+    },
+    {
+      "start": 369.99,
+      "end": 370,
+      "text": "happy days so the next line is a"
+    },
+    {
+      "start": 370,
+      "end": 371.55,
+      "text": "happy days so the next line is a variable it's an array which is being"
+    },
+    {
+      "start": 371.55,
+      "end": 371.56,
+      "text": "variable it's an array which is being"
+    },
+    {
+      "start": 371.56,
+      "end": 373.74,
+      "text": "variable it's an array which is being defined that's great we don't need to"
+    },
+    {
+      "start": 373.74,
+      "end": 373.75,
+      "text": "defined that's great we don't need to"
+    },
+    {
+      "start": 373.75,
+      "end": 374.939,
+      "text": "defined that's great we don't need to reverse engineer it's probably gonna be"
+    },
+    {
+      "start": 374.939,
+      "end": 374.949,
+      "text": "reverse engineer it's probably gonna be"
+    },
+    {
+      "start": 374.949,
+      "end": 376.079,
+      "text": "reverse engineer it's probably gonna be referenced somewhere else in the code"
+    },
+    {
+      "start": 376.079,
+      "end": 376.089,
+      "text": "referenced somewhere else in the code"
+    },
+    {
+      "start": 376.089,
+      "end": 377.79,
+      "text": "referenced somewhere else in the code let's see what's next we have another"
+    },
+    {
+      "start": 377.79,
+      "end": 377.8,
+      "text": "let's see what's next we have another"
+    },
+    {
+      "start": 377.8,
+      "end": 379.89,
+      "text": "let's see what's next we have another function call let me control C ctrl F it"
+    },
+    {
+      "start": 379.89,
+      "end": 379.9,
+      "text": "function call let me control C ctrl F it"
+    },
+    {
+      "start": 379.9,
+      "end": 381.149,
+      "text": "function call let me control C ctrl F it and we can find it doesn't get"
+    },
+    {
+      "start": 381.149,
+      "end": 381.159,
+      "text": "and we can find it doesn't get"
+    },
+    {
+      "start": 381.159,
+      "end": 382.409,
+      "text": "and we can find it doesn't get referenced anywhere the only reference"
+    },
+    {
+      "start": 382.409,
+      "end": 382.419,
+      "text": "referenced anywhere the only reference"
+    },
+    {
+      "start": 382.419,
+      "end": 384.809,
+      "text": "referenced anywhere the only reference is the function declaration so let me go"
+    },
+    {
+      "start": 384.809,
+      "end": 384.819,
+      "text": "is the function declaration so let me go"
+    },
+    {
+      "start": 384.819,
+      "end": 387.18,
+      "text": "is the function declaration so let me go to the bracket press ctrl + M and we can"
+    },
+    {
+      "start": 387.18,
+      "end": 387.19,
+      "text": "to the bracket press ctrl + M and we can"
+    },
+    {
+      "start": 387.19,
+      "end": 388.709,
+      "text": "to the bracket press ctrl + M and we can see that the matching bracket is on line"
+    },
+    {
+      "start": 388.709,
+      "end": 388.719,
+      "text": "see that the matching bracket is on line"
+    },
+    {
+      "start": 388.719,
+      "end": 392.369,
+      "text": "see that the matching bracket is on line 1 1 2 0 so again we've just cut you know"
+    },
+    {
+      "start": 392.369,
+      "end": 392.379,
+      "text": "1 1 2 0 so again we've just cut you know"
+    },
+    {
+      "start": 392.379,
+      "end": 393.959,
+      "text": "1 1 2 0 so again we've just cut you know we're slicing up this JavaScript and"
+    },
+    {
+      "start": 393.959,
+      "end": 393.969,
+      "text": "we're slicing up this JavaScript and"
+    },
+    {
+      "start": 393.969,
+      "end": 395.61,
+      "text": "we're slicing up this JavaScript and we're now on line 1100 and we've been"
+    },
+    {
+      "start": 395.61,
+      "end": 395.62,
+      "text": "we're now on line 1100 and we've been"
+    },
+    {
+      "start": 395.62,
+      "end": 397.62,
+      "text": "we're now on line 1100 and we've been looking at it for about 20 seconds we"
+    },
+    {
+      "start": 397.62,
+      "end": 397.63,
+      "text": "looking at it for about 20 seconds we"
+    },
+    {
+      "start": 397.63,
+      "end": 399.42,
+      "text": "looking at it for about 20 seconds we could see the next instruction is a very"
+    },
+    {
+      "start": 399.42,
+      "end": 399.43,
+      "text": "could see the next instruction is a very"
+    },
+    {
+      "start": 399.43,
+      "end": 399.9,
+      "text": "could see the next instruction is a very familiar"
+    },
+    {
+      "start": 399.9,
+      "end": 399.91,
+      "text": "familiar"
+    },
+    {
+      "start": 399.91,
+      "end": 401.58,
+      "text": "familiar called here we have eval and in the"
+    },
+    {
+      "start": 401.58,
+      "end": 401.59,
+      "text": "called here we have eval and in the"
+    },
+    {
+      "start": 401.59,
+      "end": 403.14,
+      "text": "called here we have eval and in the brackets of the eval we have a function"
+    },
+    {
+      "start": 403.14,
+      "end": 403.15,
+      "text": "brackets of the eval we have a function"
+    },
+    {
+      "start": 403.15,
+      "end": 405.39,
+      "text": "brackets of the eval we have a function and that takes six parameters well we"
+    },
+    {
+      "start": 405.39,
+      "end": 405.4,
+      "text": "and that takes six parameters well we"
+    },
+    {
+      "start": 405.4,
+      "end": 407.52,
+      "text": "and that takes six parameters well we saw that in one Jas and we saw that in"
+    },
+    {
+      "start": 407.52,
+      "end": 407.53,
+      "text": "saw that in one Jas and we saw that in"
+    },
+    {
+      "start": 407.53,
+      "end": 409.5,
+      "text": "saw that in one Jas and we saw that in copy Jas chances are this is our Packer"
+    },
+    {
+      "start": 409.5,
+      "end": 409.51,
+      "text": "copy Jas chances are this is our Packer"
+    },
+    {
+      "start": 409.51,
+      "end": 411.45,
+      "text": "copy Jas chances are this is our Packer routine it looks like though we've got"
+    },
+    {
+      "start": 411.45,
+      "end": 411.46,
+      "text": "routine it looks like though we've got"
+    },
+    {
+      "start": 411.46,
+      "end": 413.76,
+      "text": "routine it looks like though we've got some more of these familiar kind of junk"
+    },
+    {
+      "start": 413.76,
+      "end": 413.77,
+      "text": "some more of these familiar kind of junk"
+    },
+    {
+      "start": 413.77,
+      "end": 416.16,
+      "text": "some more of these familiar kind of junk function calls within the body of the of"
+    },
+    {
+      "start": 416.16,
+      "end": 416.17,
+      "text": "function calls within the body of the of"
+    },
+    {
+      "start": 416.17,
+      "end": 417.81,
+      "text": "function calls within the body of the of the Packer function so let's go to our"
+    },
+    {
+      "start": 417.81,
+      "end": 417.82,
+      "text": "the Packer function so let's go to our"
+    },
+    {
+      "start": 417.82,
+      "end": 420.09,
+      "text": "the Packer function so let's go to our open bracket press ctrl + M and we get"
+    },
+    {
+      "start": 420.09,
+      "end": 420.1,
+      "text": "open bracket press ctrl + M and we get"
+    },
+    {
+      "start": 420.1,
+      "end": 421.65,
+      "text": "open bracket press ctrl + M and we get to the we get to the closing bracket of"
+    },
+    {
+      "start": 421.65,
+      "end": 421.66,
+      "text": "to the we get to the closing bracket of"
+    },
+    {
+      "start": 421.66,
+      "end": 423.27,
+      "text": "to the we get to the closing bracket of the Packer function and you can see the"
+    },
+    {
+      "start": 423.27,
+      "end": 423.28,
+      "text": "the Packer function and you can see the"
+    },
+    {
+      "start": 423.28,
+      "end": 424.62,
+      "text": "the Packer function and you can see the parameters that are being passed to it"
+    },
+    {
+      "start": 424.62,
+      "end": 424.63,
+      "text": "parameters that are being passed to it"
+    },
+    {
+      "start": 424.63,
+      "end": 426.27,
+      "text": "parameters that are being passed to it are part of the array which is"
+    },
+    {
+      "start": 426.27,
+      "end": 426.28,
+      "text": "are part of the array which is"
+    },
+    {
+      "start": 426.28,
+      "end": 428.16,
+      "text": "are part of the array which is previously defined and the return value"
+    },
+    {
+      "start": 428.16,
+      "end": 428.17,
+      "text": "previously defined and the return value"
+    },
+    {
+      "start": 428.17,
+      "end": 429.99,
+      "text": "previously defined and the return value is the variable DM which is the first"
+    },
+    {
+      "start": 429.99,
+      "end": 430,
+      "text": "is the variable DM which is the first"
+    },
+    {
+      "start": 430,
+      "end": 431.34,
+      "text": "is the variable DM which is the first parameter that is passed to the actual"
+    },
+    {
+      "start": 431.34,
+      "end": 431.35,
+      "text": "parameter that is passed to the actual"
+    },
+    {
+      "start": 431.35,
+      "end": 432.36,
+      "text": "parameter that is passed to the actual part of function as well"
+    },
+    {
+      "start": 432.36,
+      "end": 432.37,
+      "text": "part of function as well"
+    },
+    {
+      "start": 432.37,
+      "end": 434.73,
+      "text": "part of function as well so rather than returning DM again we're"
+    },
+    {
+      "start": 434.73,
+      "end": 434.74,
+      "text": "so rather than returning DM again we're"
+    },
+    {
+      "start": 434.74,
+      "end": 435.84,
+      "text": "so rather than returning DM again we're going to do exactly the same as what we"
+    },
+    {
+      "start": 435.84,
+      "end": 435.85,
+      "text": "going to do exactly the same as what we"
+    },
+    {
+      "start": 435.85,
+      "end": 438.15,
+      "text": "going to do exactly the same as what we did before we're going to console dot"
+    },
+    {
+      "start": 438.15,
+      "end": 438.16,
+      "text": "did before we're going to console dot"
+    },
+    {
+      "start": 438.16,
+      "end": 441.24,
+      "text": "did before we're going to console dot log DM press save terminal window run"
+    },
+    {
+      "start": 441.24,
+      "end": 441.25,
+      "text": "log DM press save terminal window run"
+    },
+    {
+      "start": 441.25,
+      "end": 443.82,
+      "text": "log DM press save terminal window run node to DES and we can see that we get"
+    },
+    {
+      "start": 443.82,
+      "end": 443.83,
+      "text": "node to DES and we can see that we get"
+    },
+    {
+      "start": 443.83,
+      "end": 445.44,
+      "text": "node to DES and we can see that we get an error throw and that's fine right"
+    },
+    {
+      "start": 445.44,
+      "end": 445.45,
+      "text": "an error throw and that's fine right"
+    },
+    {
+      "start": 445.45,
+      "end": 447,
+      "text": "an error throw and that's fine right let's let's kind of think about this out"
+    },
+    {
+      "start": 447,
+      "end": 447.01,
+      "text": "let's let's kind of think about this out"
+    },
+    {
+      "start": 447.01,
+      "end": 448.5,
+      "text": "let's let's kind of think about this out loud a little bit we can see here we've"
+    },
+    {
+      "start": 448.5,
+      "end": 448.51,
+      "text": "loud a little bit we can see here we've"
+    },
+    {
+      "start": 448.51,
+      "end": 450.42,
+      "text": "loud a little bit we can see here we've got two Gs flouride three two zero seven"
+    },
+    {
+      "start": 450.42,
+      "end": 450.43,
+      "text": "got two Gs flouride three two zero seven"
+    },
+    {
+      "start": 450.43,
+      "end": 452.28,
+      "text": "got two Gs flouride three two zero seven it's telling me that w script is not"
+    },
+    {
+      "start": 452.28,
+      "end": 452.29,
+      "text": "it's telling me that w script is not"
+    },
+    {
+      "start": 452.29,
+      "end": 454.05,
+      "text": "it's telling me that w script is not defined well that's great actually"
+    },
+    {
+      "start": 454.05,
+      "end": 454.06,
+      "text": "defined well that's great actually"
+    },
+    {
+      "start": 454.06,
+      "end": 456.24,
+      "text": "defined well that's great actually because I'm not on Windows I'm using a"
+    },
+    {
+      "start": 456.24,
+      "end": 456.25,
+      "text": "because I'm not on Windows I'm using a"
+    },
+    {
+      "start": 456.25,
+      "end": 458.67,
+      "text": "because I'm not on Windows I'm using a mac and w script is not recognized on"
+    },
+    {
+      "start": 458.67,
+      "end": 458.68,
+      "text": "mac and w script is not recognized on"
+    },
+    {
+      "start": 458.68,
+      "end": 460.29,
+      "text": "mac and w script is not recognized on window on my Mac it's recognized in"
+    },
+    {
+      "start": 460.29,
+      "end": 460.3,
+      "text": "window on my Mac it's recognized in"
+    },
+    {
+      "start": 460.3,
+      "end": 463.14,
+      "text": "window on my Mac it's recognized in Windows so w script it dot sleep which"
+    },
+    {
+      "start": 463.14,
+      "end": 463.15,
+      "text": "Windows so w script it dot sleep which"
+    },
+    {
+      "start": 463.15,
+      "end": 464.13,
+      "text": "Windows so w script it dot sleep which is the if you go back to the error"
+    },
+    {
+      "start": 464.13,
+      "end": 464.14,
+      "text": "is the if you go back to the error"
+    },
+    {
+      "start": 464.14,
+      "end": 466.5,
+      "text": "is the if you go back to the error message to leave W script or sleep in"
+    },
+    {
+      "start": 466.5,
+      "end": 466.51,
+      "text": "message to leave W script or sleep in"
+    },
+    {
+      "start": 466.51,
+      "end": 469.08,
+      "text": "message to leave W script or sleep in brackets 32 is the is that is the line"
+    },
+    {
+      "start": 469.08,
+      "end": 469.09,
+      "text": "brackets 32 is the is that is the line"
+    },
+    {
+      "start": 469.09,
+      "end": 471.15,
+      "text": "brackets 32 is the is that is the line of text it's got a problem with well"
+    },
+    {
+      "start": 471.15,
+      "end": 471.16,
+      "text": "of text it's got a problem with well"
+    },
+    {
+      "start": 471.16,
+      "end": 472.23,
+      "text": "of text it's got a problem with well that's fine it's just sleeping that's"
+    },
+    {
+      "start": 472.23,
+      "end": 472.24,
+      "text": "that's fine it's just sleeping that's"
+    },
+    {
+      "start": 472.24,
+      "end": 473.88,
+      "text": "that's fine it's just sleeping that's probably cuz some kind of like sandbox"
+    },
+    {
+      "start": 473.88,
+      "end": 473.89,
+      "text": "probably cuz some kind of like sandbox"
+    },
+    {
+      "start": 473.89,
+      "end": 476.82,
+      "text": "probably cuz some kind of like sandbox evasion or whatever we can see here if I"
+    },
+    {
+      "start": 476.82,
+      "end": 476.83,
+      "text": "evasion or whatever we can see here if I"
+    },
+    {
+      "start": 476.83,
+      "end": 478.59,
+      "text": "evasion or whatever we can see here if I search for W script within this within"
+    },
+    {
+      "start": 478.59,
+      "end": 478.6,
+      "text": "search for W script within this within"
+    },
+    {
+      "start": 478.6,
+      "end": 480.36,
+      "text": "search for W script within this within the in the code I've got an entry here"
+    },
+    {
+      "start": 480.36,
+      "end": 480.37,
+      "text": "the in the code I've got an entry here"
+    },
+    {
+      "start": 480.37,
+      "end": 481.59,
+      "text": "the in the code I've got an entry here on line six four seven"
+    },
+    {
+      "start": 481.59,
+      "end": 481.6,
+      "text": "on line six four seven"
+    },
+    {
+      "start": 481.6,
+      "end": 483.45,
+      "text": "on line six four seven I can just comment that out let me go"
+    },
+    {
+      "start": 483.45,
+      "end": 483.46,
+      "text": "I can just comment that out let me go"
+    },
+    {
+      "start": 483.46,
+      "end": 484.44,
+      "text": "I can just comment that out let me go over to the next one let me see if"
+    },
+    {
+      "start": 484.44,
+      "end": 484.45,
+      "text": "over to the next one let me see if"
+    },
+    {
+      "start": 484.45,
+      "end": 485.97,
+      "text": "over to the next one let me see if there's any others that exist and we can"
+    },
+    {
+      "start": 485.97,
+      "end": 485.98,
+      "text": "there's any others that exist and we can"
+    },
+    {
+      "start": 485.98,
+      "end": 487.2,
+      "text": "there's any others that exist and we can see here this is the one that threw the"
+    },
+    {
+      "start": 487.2,
+      "end": 487.21,
+      "text": "see here this is the one that threw the"
+    },
+    {
+      "start": 487.21,
+      "end": 489.12,
+      "text": "see here this is the one that threw the error on w script asleep 32 let me"
+    },
+    {
+      "start": 489.12,
+      "end": 489.13,
+      "text": "error on w script asleep 32 let me"
+    },
+    {
+      "start": 489.13,
+      "end": 490.23,
+      "text": "error on w script asleep 32 let me comment that one out as well"
+    },
+    {
+      "start": 490.23,
+      "end": 490.24,
+      "text": "comment that one out as well"
+    },
+    {
+      "start": 490.24,
+      "end": 492.06,
+      "text": "comment that one out as well let me see if there's any others let me"
+    },
+    {
+      "start": 492.06,
+      "end": 492.07,
+      "text": "let me see if there's any others let me"
+    },
+    {
+      "start": 492.07,
+      "end": 495.27,
+      "text": "let me see if there's any others let me just do W script just those two okay"
+    },
+    {
+      "start": 495.27,
+      "end": 495.28,
+      "text": "just do W script just those two okay"
+    },
+    {
+      "start": 495.28,
+      "end": 496.95,
+      "text": "just do W script just those two okay that's cool so let me go back let me"
+    },
+    {
+      "start": 496.95,
+      "end": 496.96,
+      "text": "that's cool so let me go back let me"
+    },
+    {
+      "start": 496.96,
+      "end": 498.48,
+      "text": "that's cool so let me go back let me save it and let me go back to a terminal"
+    },
+    {
+      "start": 498.48,
+      "end": 498.49,
+      "text": "save it and let me go back to a terminal"
+    },
+    {
+      "start": 498.49,
+      "end": 500.49,
+      "text": "save it and let me go back to a terminal window we're on to guess again and we"
+    },
+    {
+      "start": 500.49,
+      "end": 500.5,
+      "text": "window we're on to guess again and we"
+    },
+    {
+      "start": 500.5,
+      "end": 502.11,
+      "text": "window we're on to guess again and we could see this time that executes fine"
+    },
+    {
+      "start": 502.11,
+      "end": 502.12,
+      "text": "could see this time that executes fine"
+    },
+    {
+      "start": 502.12,
+      "end": 503.94,
+      "text": "could see this time that executes fine no problems whatsoever and we can see"
+    },
+    {
+      "start": 503.94,
+      "end": 503.95,
+      "text": "no problems whatsoever and we can see"
+    },
+    {
+      "start": 503.95,
+      "end": 505.83,
+      "text": "no problems whatsoever and we can see right okay let's redirect that to 3GS"
+    },
+    {
+      "start": 505.83,
+      "end": 505.84,
+      "text": "right okay let's redirect that to 3GS"
+    },
+    {
+      "start": 505.84,
+      "end": 507.72,
+      "text": "right okay let's redirect that to 3GS and see what we're left with that's open"
+    },
+    {
+      "start": 507.72,
+      "end": 507.73,
+      "text": "and see what we're left with that's open"
+    },
+    {
+      "start": 507.73,
+      "end": 510.69,
+      "text": "and see what we're left with that's open 3s in our text editor command shift H"
+    },
+    {
+      "start": 510.69,
+      "end": 510.7,
+      "text": "3s in our text editor command shift H"
+    },
+    {
+      "start": 510.7,
+      "end": 512.339,
+      "text": "3s in our text editor command shift H come we could see we've got very very"
+    },
+    {
+      "start": 512.339,
+      "end": 512.349,
+      "text": "come we could see we've got very very"
+    },
+    {
+      "start": 512.349,
+      "end": 514.14,
+      "text": "come we could see we've got very very similar stuff to what we saw in two Gs"
+    },
+    {
+      "start": 514.14,
+      "end": 514.15,
+      "text": "similar stuff to what we saw in two Gs"
+    },
+    {
+      "start": 514.15,
+      "end": 515.94,
+      "text": "similar stuff to what we saw in two Gs we have this array being defined and it"
+    },
+    {
+      "start": 515.94,
+      "end": 515.95,
+      "text": "we have this array being defined and it"
+    },
+    {
+      "start": 515.95,
+      "end": 517.14,
+      "text": "we have this array being defined and it looks like we've got a load of junk code"
+    },
+    {
+      "start": 517.14,
+      "end": 517.15,
+      "text": "looks like we've got a load of junk code"
+    },
+    {
+      "start": 517.15,
+      "end": 518.43,
+      "text": "looks like we've got a load of junk code as well so let me tidy it up a little"
+    },
+    {
+      "start": 518.43,
+      "end": 518.44,
+      "text": "as well so let me tidy it up a little"
+    },
+    {
+      "start": 518.44,
+      "end": 520.44,
+      "text": "as well so let me tidy it up a little bit so let's search for this particular"
+    },
+    {
+      "start": 520.44,
+      "end": 520.45,
+      "text": "bit so let's search for this particular"
+    },
+    {
+      "start": 520.45,
+      "end": 521.01,
+      "text": "bit so let's search for this particular function"
+    },
+    {
+      "start": 521.01,
+      "end": 521.02,
+      "text": "function"
+    },
+    {
+      "start": 521.02,
+      "end": 523.589,
+      "text": "function Jovie doesn't happen so that's this is a"
+    },
+    {
+      "start": 523.589,
+      "end": 523.599,
+      "text": "Jovie doesn't happen so that's this is a"
+    },
+    {
+      "start": 523.599,
+      "end": 526.08,
+      "text": "Jovie doesn't happen so that's this is a junk function call let's go to the Open"
+    },
+    {
+      "start": 526.08,
+      "end": 526.09,
+      "text": "junk function call let's go to the Open"
+    },
+    {
+      "start": 526.09,
+      "end": 526.5,
+      "text": "junk function call let's go to the Open bracket"
+    },
+    {
+      "start": 526.5,
+      "end": 526.51,
+      "text": "bracket"
+    },
+    {
+      "start": 526.51,
+      "end": 528.21,
+      "text": "bracket let's press ctrl + M and we'll get to"
+    },
+    {
+      "start": 528.21,
+      "end": 528.22,
+      "text": "let's press ctrl + M and we'll get to"
+    },
+    {
+      "start": 528.22,
+      "end": 530.43,
+      "text": "let's press ctrl + M and we'll get to the matching bracket line 150 and look"
+    },
+    {
+      "start": 530.43,
+      "end": 530.44,
+      "text": "the matching bracket line 150 and look"
+    },
+    {
+      "start": 530.44,
+      "end": 532.02,
+      "text": "the matching bracket line 150 and look again we've got very very similar thing"
+    },
+    {
+      "start": 532.02,
+      "end": 532.03,
+      "text": "again we've got very very similar thing"
+    },
+    {
+      "start": 532.03,
+      "end": 533.67,
+      "text": "again we've got very very similar thing to what we saw him to do tears from one"
+    },
+    {
+      "start": 533.67,
+      "end": 533.68,
+      "text": "to what we saw him to do tears from one"
+    },
+    {
+      "start": 533.68,
+      "end": 535.739,
+      "text": "to what we saw him to do tears from one and copied us right we've got a viral"
+    },
+    {
+      "start": 535.739,
+      "end": 535.749,
+      "text": "and copied us right we've got a viral"
+    },
+    {
+      "start": 535.749,
+      "end": 537.629,
+      "text": "and copied us right we've got a viral with a function and it takes six"
+    },
+    {
+      "start": 537.629,
+      "end": 537.639,
+      "text": "with a function and it takes six"
+    },
+    {
+      "start": 537.639,
+      "end": 538.98,
+      "text": "with a function and it takes six parameters we've got a load of junk"
+    },
+    {
+      "start": 538.98,
+      "end": 538.99,
+      "text": "parameters we've got a load of junk"
+    },
+    {
+      "start": 538.99,
+      "end": 540.569,
+      "text": "parameters we've got a load of junk that's in the middle of it so let's go"
+    },
+    {
+      "start": 540.569,
+      "end": 540.579,
+      "text": "that's in the middle of it so let's go"
+    },
+    {
+      "start": 540.579,
+      "end": 542.549,
+      "text": "that's in the middle of it so let's go to the open bracket we'll press ctrl + M"
+    },
+    {
+      "start": 542.549,
+      "end": 542.559,
+      "text": "to the open bracket we'll press ctrl + M"
+    },
+    {
+      "start": 542.559,
+      "end": 544.259,
+      "text": "to the open bracket we'll press ctrl + M to get the matching bracket and we can"
+    },
+    {
+      "start": 544.259,
+      "end": 544.269,
+      "text": "to get the matching bracket and we can"
+    },
+    {
+      "start": 544.269,
+      "end": 545.519,
+      "text": "to get the matching bracket and we can see here the matching bracket is right"
+    },
+    {
+      "start": 545.519,
+      "end": 545.529,
+      "text": "see here the matching bracket is right"
+    },
+    {
+      "start": 545.529,
+      "end": 547.949,
+      "text": "see here the matching bracket is right down here on line 1689 and we can see"
+    },
+    {
+      "start": 547.949,
+      "end": 547.959,
+      "text": "down here on line 1689 and we can see"
+    },
+    {
+      "start": 547.959,
+      "end": 550.049,
+      "text": "down here on line 1689 and we can see that the actual for the return value of"
+    },
+    {
+      "start": 550.049,
+      "end": 550.059,
+      "text": "that the actual for the return value of"
+    },
+    {
+      "start": 550.059,
+      "end": 552.119,
+      "text": "that the actual for the return value of the Packer function is the variable"
+    },
+    {
+      "start": 552.119,
+      "end": 552.129,
+      "text": "the Packer function is the variable"
+    },
+    {
+      "start": 552.129,
+      "end": 553.079,
+      "text": "the Packer function is the variable underscore four"
+    },
+    {
+      "start": 553.079,
+      "end": 553.089,
+      "text": "underscore four"
+    },
+    {
+      "start": 553.089,
+      "end": 554.939,
+      "text": "underscore four so instead of returning it will do"
+    },
+    {
+      "start": 554.939,
+      "end": 554.949,
+      "text": "so instead of returning it will do"
+    },
+    {
+      "start": 554.949,
+      "end": 556.139,
+      "text": "so instead of returning it will do exactly what we did before"
+    },
+    {
+      "start": 556.139,
+      "end": 556.149,
+      "text": "exactly what we did before"
+    },
+    {
+      "start": 556.149,
+      "end": 558.509,
+      "text": "exactly what we did before I'll put underscore for within the"
+    },
+    {
+      "start": 558.509,
+      "end": 558.519,
+      "text": "I'll put underscore for within the"
+    },
+    {
+      "start": 558.519,
+      "end": 560.73,
+      "text": "I'll put underscore for within the brackets and then we'll run 300 GS so"
+    },
+    {
+      "start": 560.73,
+      "end": 560.74,
+      "text": "brackets and then we'll run 300 GS so"
+    },
+    {
+      "start": 560.74,
+      "end": 563.489,
+      "text": "brackets and then we'll run 300 GS so let's do know three GS cool we get more"
+    },
+    {
+      "start": 563.489,
+      "end": 563.499,
+      "text": "let's do know three GS cool we get more"
+    },
+    {
+      "start": 563.499,
+      "end": 564.66,
+      "text": "let's do know three GS cool we get more JavaScript so hopefully we're getting"
+    },
+    {
+      "start": 564.66,
+      "end": 564.67,
+      "text": "JavaScript so hopefully we're getting"
+    },
+    {
+      "start": 564.67,
+      "end": 566.46,
+      "text": "JavaScript so hopefully we're getting somewhere now so we're peeling back the"
+    },
+    {
+      "start": 566.46,
+      "end": 566.47,
+      "text": "somewhere now so we're peeling back the"
+    },
+    {
+      "start": 566.47,
+      "end": 568.65,
+      "text": "somewhere now so we're peeling back the layers of this particular sample output"
+    },
+    {
+      "start": 568.65,
+      "end": 568.66,
+      "text": "layers of this particular sample output"
+    },
+    {
+      "start": 568.66,
+      "end": 570.72,
+      "text": "layers of this particular sample output it's a four digest let's have a look at"
+    },
+    {
+      "start": 570.72,
+      "end": 570.73,
+      "text": "it's a four digest let's have a look at"
+    },
+    {
+      "start": 570.73,
+      "end": 572.04,
+      "text": "it's a four digest let's have a look at four jeaious and hopefully we'll be"
+    },
+    {
+      "start": 572.04,
+      "end": 572.05,
+      "text": "four jeaious and hopefully we'll be"
+    },
+    {
+      "start": 572.05,
+      "end": 574.259,
+      "text": "four jeaious and hopefully we'll be getting somewhere okay right we've got"
+    },
+    {
+      "start": 574.259,
+      "end": 574.269,
+      "text": "getting somewhere okay right we've got"
+    },
+    {
+      "start": 574.269,
+      "end": 575.34,
+      "text": "getting somewhere okay right we've got something which looks a little bit"
+    },
+    {
+      "start": 575.34,
+      "end": 575.35,
+      "text": "something which looks a little bit"
+    },
+    {
+      "start": 575.35,
+      "end": 577.47,
+      "text": "something which looks a little bit different so okay still looks noisy but"
+    },
+    {
+      "start": 577.47,
+      "end": 577.48,
+      "text": "different so okay still looks noisy but"
+    },
+    {
+      "start": 577.48,
+      "end": 578.699,
+      "text": "different so okay still looks noisy but it looks a little bit different let me"
+    },
+    {
+      "start": 578.699,
+      "end": 578.709,
+      "text": "it looks a little bit different let me"
+    },
+    {
+      "start": 578.709,
+      "end": 581.28,
+      "text": "it looks a little bit different let me tidy up command shift eight again okay"
+    },
+    {
+      "start": 581.28,
+      "end": 581.29,
+      "text": "tidy up command shift eight again okay"
+    },
+    {
+      "start": 581.29,
+      "end": 582.48,
+      "text": "tidy up command shift eight again okay so it just gives us some extra line"
+    },
+    {
+      "start": 582.48,
+      "end": 582.49,
+      "text": "so it just gives us some extra line"
+    },
+    {
+      "start": 582.49,
+      "end": 584.369,
+      "text": "so it just gives us some extra line breaks and we can see right okay we've"
+    },
+    {
+      "start": 584.369,
+      "end": 584.379,
+      "text": "breaks and we can see right okay we've"
+    },
+    {
+      "start": 584.379,
+      "end": 585.749,
+      "text": "breaks and we can see right okay we've got this this function which is being"
+    },
+    {
+      "start": 585.749,
+      "end": 585.759,
+      "text": "got this this function which is being"
+    },
+    {
+      "start": 585.759,
+      "end": 587.939,
+      "text": "got this this function which is being defined right at the top ctrl + V this"
+    },
+    {
+      "start": 587.939,
+      "end": 587.949,
+      "text": "defined right at the top ctrl + V this"
+    },
+    {
+      "start": 587.949,
+      "end": 589.499,
+      "text": "defined right at the top ctrl + V this is the only declaration is the only"
+    },
+    {
+      "start": 589.499,
+      "end": 589.509,
+      "text": "is the only declaration is the only"
+    },
+    {
+      "start": 589.509,
+      "end": 591.21,
+      "text": "is the only declaration is the only entity of this function is this"
+    },
+    {
+      "start": 591.21,
+      "end": 591.22,
+      "text": "entity of this function is this"
+    },
+    {
+      "start": 591.22,
+      "end": 593.129,
+      "text": "entity of this function is this declaration itself let's go to the Open"
+    },
+    {
+      "start": 593.129,
+      "end": 593.139,
+      "text": "declaration itself let's go to the Open"
+    },
+    {
+      "start": 593.139,
+      "end": 594.96,
+      "text": "declaration itself let's go to the Open bracket press ctrl + M we'll get the"
+    },
+    {
+      "start": 594.96,
+      "end": 594.97,
+      "text": "bracket press ctrl + M we'll get the"
+    },
+    {
+      "start": 594.97,
+      "end": 596.85,
+      "text": "bracket press ctrl + M we'll get the matching bracket on one hundred lines in"
+    },
+    {
+      "start": 596.85,
+      "end": 596.86,
+      "text": "matching bracket on one hundred lines in"
+    },
+    {
+      "start": 596.86,
+      "end": 598.739,
+      "text": "matching bracket on one hundred lines in but the next line look at this next line"
+    },
+    {
+      "start": 598.739,
+      "end": 598.749,
+      "text": "but the next line look at this next line"
+    },
+    {
+      "start": 598.749,
+      "end": 600.449,
+      "text": "but the next line look at this next line right we have a variable which is"
+    },
+    {
+      "start": 600.449,
+      "end": 600.459,
+      "text": "right we have a variable which is"
+    },
+    {
+      "start": 600.459,
+      "end": 602.819,
+      "text": "right we have a variable which is defining a new activexobject which is a"
+    },
+    {
+      "start": 602.819,
+      "end": 602.829,
+      "text": "defining a new activexobject which is a"
+    },
+    {
+      "start": 602.829,
+      "end": 604.47,
+      "text": "defining a new activexobject which is a double new scripted shell but it's"
+    },
+    {
+      "start": 604.47,
+      "end": 604.48,
+      "text": "double new scripted shell but it's"
+    },
+    {
+      "start": 604.48,
+      "end": 605.699,
+      "text": "double new scripted shell but it's definitely of interest to us let's copy"
+    },
+    {
+      "start": 605.699,
+      "end": 605.709,
+      "text": "definitely of interest to us let's copy"
+    },
+    {
+      "start": 605.709,
+      "end": 607.199,
+      "text": "definitely of interest to us let's copy that I'm gonna paste that into a new and"
+    },
+    {
+      "start": 607.199,
+      "end": 607.209,
+      "text": "that I'm gonna paste that into a new and"
+    },
+    {
+      "start": 607.209,
+      "end": 609.689,
+      "text": "that I'm gonna paste that into a new and into a new file for now next line is a"
+    },
+    {
+      "start": 609.689,
+      "end": 609.699,
+      "text": "into a new file for now next line is a"
+    },
+    {
+      "start": 609.699,
+      "end": 611.489,
+      "text": "into a new file for now next line is a function that's been defined ctrl + F it"
+    },
+    {
+      "start": 611.489,
+      "end": 611.499,
+      "text": "function that's been defined ctrl + F it"
+    },
+    {
+      "start": 611.499,
+      "end": 613.29,
+      "text": "function that's been defined ctrl + F it is it exists though it doesn't so let's"
+    },
+    {
+      "start": 613.29,
+      "end": 613.3,
+      "text": "is it exists though it doesn't so let's"
+    },
+    {
+      "start": 613.3,
+      "end": 614.639,
+      "text": "is it exists though it doesn't so let's get past it with it exactly what we're"
+    },
+    {
+      "start": 614.639,
+      "end": 614.649,
+      "text": "get past it with it exactly what we're"
+    },
+    {
+      "start": 614.649,
+      "end": 616.139,
+      "text": "get past it with it exactly what we're saying the same as what we did before"
+    },
+    {
+      "start": 616.139,
+      "end": 616.149,
+      "text": "saying the same as what we did before"
+    },
+    {
+      "start": 616.149,
+      "end": 619.019,
+      "text": "saying the same as what we did before ctrl + M on the open bracket and we'll"
+    },
+    {
+      "start": 619.019,
+      "end": 619.029,
+      "text": "ctrl + M on the open bracket and we'll"
+    },
+    {
+      "start": 619.029,
+      "end": 620.309,
+      "text": "ctrl + M on the open bracket and we'll get to the closing bracket the mounting"
+    },
+    {
+      "start": 620.309,
+      "end": 620.319,
+      "text": "get to the closing bracket the mounting"
+    },
+    {
+      "start": 620.319,
+      "end": 620.79,
+      "text": "get to the closing bracket the mounting bracket"
+    },
+    {
+      "start": 620.8,
+      "end": 622.889,
+      "text": "bracket so we're on line 276 already we have"
+    },
+    {
+      "start": 622.889,
+      "end": 622.899,
+      "text": "so we're on line 276 already we have"
+    },
+    {
+      "start": 622.899,
+      "end": 624.96,
+      "text": "so we're on line 276 already we have another ActiveX object scripting the"
+    },
+    {
+      "start": 624.96,
+      "end": 624.97,
+      "text": "another ActiveX object scripting the"
+    },
+    {
+      "start": 624.97,
+      "end": 626.759,
+      "text": "another ActiveX object scripting the file system object great stuff it looks"
+    },
+    {
+      "start": 626.759,
+      "end": 626.769,
+      "text": "file system object great stuff it looks"
+    },
+    {
+      "start": 626.769,
+      "end": 628.71,
+      "text": "file system object great stuff it looks like we've got the bad guys code which"
+    },
+    {
+      "start": 628.71,
+      "end": 628.72,
+      "text": "like we've got the bad guys code which"
+    },
+    {
+      "start": 628.72,
+      "end": 630.239,
+      "text": "like we've got the bad guys code which is which is coming together right so"
+    },
+    {
+      "start": 630.239,
+      "end": 630.249,
+      "text": "is which is coming together right so"
+    },
+    {
+      "start": 630.249,
+      "end": 631.739,
+      "text": "is which is coming together right so it's in between all of this code we've"
+    },
+    {
+      "start": 631.739,
+      "end": 631.749,
+      "text": "it's in between all of this code we've"
+    },
+    {
+      "start": 631.749,
+      "end": 633.419,
+      "text": "it's in between all of this code we've got all of this noise and we just need"
+    },
+    {
+      "start": 633.419,
+      "end": 633.429,
+      "text": "got all of this noise and we just need"
+    },
+    {
+      "start": 633.429,
+      "end": 634.98,
+      "text": "got all of this noise and we just need to get rid of the noise why just get"
+    },
+    {
+      "start": 634.98,
+      "end": 634.99,
+      "text": "to get rid of the noise why just get"
+    },
+    {
+      "start": 634.99,
+      "end": 636.78,
+      "text": "to get rid of the noise why just get past it another function called does it"
+    },
+    {
+      "start": 636.78,
+      "end": 636.79,
+      "text": "past it another function called does it"
+    },
+    {
+      "start": 636.79,
+      "end": 639.539,
+      "text": "past it another function called does it exist no it doesn't okay cool ctrl + M"
+    },
+    {
+      "start": 639.539,
+      "end": 639.549,
+      "text": "exist no it doesn't okay cool ctrl + M"
+    },
+    {
+      "start": 639.549,
+      "end": 640.919,
+      "text": "exist no it doesn't okay cool ctrl + M will get passed it gets the matching"
+    },
+    {
+      "start": 640.919,
+      "end": 640.929,
+      "text": "will get passed it gets the matching"
+    },
+    {
+      "start": 640.929,
+      "end": 642.84,
+      "text": "will get passed it gets the matching bracket the next line we can see that"
+    },
+    {
+      "start": 642.84,
+      "end": 642.85,
+      "text": "bracket the next line we can see that"
+    },
+    {
+      "start": 642.85,
+      "end": 646.199,
+      "text": "bracket the next line we can see that we've got this we have a file path being"
+    },
+    {
+      "start": 646.199,
+      "end": 646.209,
+      "text": "we've got this we have a file path being"
+    },
+    {
+      "start": 646.209,
+      "end": 647.759,
+      "text": "we've got this we have a file path being defined here so we've got our variable"
+    },
+    {
+      "start": 647.759,
+      "end": 647.769,
+      "text": "defined here so we've got our variable"
+    },
+    {
+      "start": 647.769,
+      "end": 649.679,
+      "text": "defined here so we've got our variable which is going to be the scripting file"
+    },
+    {
+      "start": 649.679,
+      "end": 649.689,
+      "text": "which is going to be the scripting file"
+    },
+    {
+      "start": 649.689,
+      "end": 651.929,
+      "text": "which is going to be the scripting file system object we can see get special"
+    },
+    {
+      "start": 651.929,
+      "end": 651.939,
+      "text": "system object we can see get special"
+    },
+    {
+      "start": 651.939,
+      "end": 653.639,
+      "text": "system object we can see get special folder to which is a temp directory and"
+    },
+    {
+      "start": 653.639,
+      "end": 653.649,
+      "text": "folder to which is a temp directory and"
+    },
+    {
+      "start": 653.649,
+      "end": 655.139,
+      "text": "folder to which is a temp directory and here's the file name that's going to be"
+    },
+    {
+      "start": 655.139,
+      "end": 655.149,
+      "text": "here's the file name that's going to be"
+    },
+    {
+      "start": 655.149,
+      "end": 656.939,
+      "text": "here's the file name that's going to be actually written - okay let's keep going"
+    },
+    {
+      "start": 656.939,
+      "end": 656.949,
+      "text": "actually written - okay let's keep going"
+    },
+    {
+      "start": 656.949,
+      "end": 658.47,
+      "text": "actually written - okay let's keep going we've got another function called does"
+    },
+    {
+      "start": 658.47,
+      "end": 658.48,
+      "text": "we've got another function called does"
+    },
+    {
+      "start": 658.48,
+      "end": 660.929,
+      "text": "we've got another function called does it get defined ctrl + f no it doesn't go"
+    },
+    {
+      "start": 660.929,
+      "end": 660.939,
+      "text": "it get defined ctrl + f no it doesn't go"
+    },
+    {
+      "start": 660.939,
+      "end": 662.699,
+      "text": "it get defined ctrl + f no it doesn't go to the matching bracket press ctrl + M"
+    },
+    {
+      "start": 662.699,
+      "end": 662.709,
+      "text": "to the matching bracket press ctrl + M"
+    },
+    {
+      "start": 662.709,
+      "end": 665.039,
+      "text": "to the matching bracket press ctrl + M just get past it I'm on line 540 already"
+    },
+    {
+      "start": 665.039,
+      "end": 665.049,
+      "text": "just get past it I'm on line 540 already"
+    },
+    {
+      "start": 665.049,
+      "end": 667.46,
+      "text": "just get past it I'm on line 540 already ok cool the ad over these streams we"
+    },
+    {
+      "start": 667.46,
+      "end": 667.47,
+      "text": "ok cool the ad over these streams we"
+    },
+    {
+      "start": 667.47,
+      "end": 674.87,
+      "text": "ok cool the ad over these streams we to find fantastic oops there we go I'd"
+    },
+    {
+      "start": 674.87,
+      "end": 674.88,
+      "text": "to find fantastic oops there we go I'd"
+    },
+    {
+      "start": 674.88,
+      "end": 677.54,
+      "text": "to find fantastic oops there we go I'd save that great we've got another"
+    },
+    {
+      "start": 677.54,
+      "end": 677.55,
+      "text": "save that great we've got another"
+    },
+    {
+      "start": 677.55,
+      "end": 679.76,
+      "text": "save that great we've got another function does is is it referenced"
+    },
+    {
+      "start": 679.76,
+      "end": 679.77,
+      "text": "function does is is it referenced"
+    },
+    {
+      "start": 679.77,
+      "end": 681.17,
+      "text": "function does is is it referenced anywhere no it's not let's go to the"
+    },
+    {
+      "start": 681.17,
+      "end": 681.18,
+      "text": "anywhere no it's not let's go to the"
+    },
+    {
+      "start": 681.18,
+      "end": 682.91,
+      "text": "anywhere no it's not let's go to the Open bracket press ctrl + M we'll skip"
+    },
+    {
+      "start": 682.91,
+      "end": 682.92,
+      "text": "Open bracket press ctrl + M we'll skip"
+    },
+    {
+      "start": 682.92,
+      "end": 685.25,
+      "text": "Open bracket press ctrl + M we'll skip past it we can see here right open the"
+    },
+    {
+      "start": 685.25,
+      "end": 685.26,
+      "text": "past it we can see here right open the"
+    },
+    {
+      "start": 685.26,
+      "end": 687.62,
+      "text": "past it we can see here right open the method to open typing equals one we've"
+    },
+    {
+      "start": 687.62,
+      "end": 687.63,
+      "text": "method to open typing equals one we've"
+    },
+    {
+      "start": 687.63,
+      "end": 689.36,
+      "text": "method to open typing equals one we've got another function call okay looks"
+    },
+    {
+      "start": 689.36,
+      "end": 689.37,
+      "text": "got another function call okay looks"
+    },
+    {
+      "start": 689.37,
+      "end": 691.22,
+      "text": "got another function call okay looks like junk ctrl + M let's get past it"
+    },
+    {
+      "start": 691.22,
+      "end": 691.23,
+      "text": "like junk ctrl + M let's get past it"
+    },
+    {
+      "start": 691.23,
+      "end": 693.23,
+      "text": "like junk ctrl + M let's get past it cool position 0 that's gonna be the"
+    },
+    {
+      "start": 693.23,
+      "end": 693.24,
+      "text": "cool position 0 that's gonna be the"
+    },
+    {
+      "start": 693.24,
+      "end": 696.35,
+      "text": "cool position 0 that's gonna be the position where the the file is where you"
+    },
+    {
+      "start": 696.35,
+      "end": 696.36,
+      "text": "position where the the file is where you"
+    },
+    {
+      "start": 696.36,
+      "end": 698.03,
+      "text": "position where the the file is where you start to write the file we can see"
+    },
+    {
+      "start": 698.03,
+      "end": 698.04,
+      "text": "start to write the file we can see"
+    },
+    {
+      "start": 698.04,
+      "end": 700.1,
+      "text": "start to write the file we can see another function call which is again"
+    },
+    {
+      "start": 700.1,
+      "end": 700.11,
+      "text": "another function call which is again"
+    },
+    {
+      "start": 700.11,
+      "end": 701.87,
+      "text": "another function call which is again looks like junk control and M get past"
+    },
+    {
+      "start": 701.87,
+      "end": 701.88,
+      "text": "looks like junk control and M get past"
+    },
+    {
+      "start": 701.88,
+      "end": 704,
+      "text": "looks like junk control and M get past it being you see the ActiveX object we"
+    },
+    {
+      "start": 704,
+      "end": 704.01,
+      "text": "it being you see the ActiveX object we"
+    },
+    {
+      "start": 704.01,
+      "end": 705.92,
+      "text": "it being you see the ActiveX object we can see the wind HTTP request now being"
+    },
+    {
+      "start": 705.92,
+      "end": 705.93,
+      "text": "can see the wind HTTP request now being"
+    },
+    {
+      "start": 705.93,
+      "end": 707.96,
+      "text": "can see the wind HTTP request now being built fantastic we've got another"
+    },
+    {
+      "start": 707.96,
+      "end": 707.97,
+      "text": "built fantastic we've got another"
+    },
+    {
+      "start": 707.97,
+      "end": 709.58,
+      "text": "built fantastic we've got another function call god there's so much noise"
+    },
+    {
+      "start": 709.58,
+      "end": 709.59,
+      "text": "function call god there's so much noise"
+    },
+    {
+      "start": 709.59,
+      "end": 711.26,
+      "text": "function call god there's so much noise and this is unbelievable control and M"
+    },
+    {
+      "start": 711.26,
+      "end": 711.27,
+      "text": "and this is unbelievable control and M"
+    },
+    {
+      "start": 711.27,
+      "end": 713.39,
+      "text": "and this is unbelievable control and M get past it and we can see right here is"
+    },
+    {
+      "start": 713.39,
+      "end": 713.4,
+      "text": "get past it and we can see right here is"
+    },
+    {
+      "start": 713.4,
+      "end": 715.94,
+      "text": "get past it and we can see right here is the open to the get request fantastic"
+    },
+    {
+      "start": 715.94,
+      "end": 715.95,
+      "text": "the open to the get request fantastic"
+    },
+    {
+      "start": 715.95,
+      "end": 717.65,
+      "text": "the open to the get request fantastic now we've got our network indication so"
+    },
+    {
+      "start": 717.65,
+      "end": 717.66,
+      "text": "now we've got our network indication so"
+    },
+    {
+      "start": 717.66,
+      "end": 719.24,
+      "text": "now we've got our network indication so we've got an IP address and a full path"
+    },
+    {
+      "start": 719.24,
+      "end": 719.25,
+      "text": "we've got an IP address and a full path"
+    },
+    {
+      "start": 719.25,
+      "end": 721.76,
+      "text": "we've got an IP address and a full path we can see it to get request fantastic"
+    },
+    {
+      "start": 721.76,
+      "end": 721.77,
+      "text": "we can see it to get request fantastic"
+    },
+    {
+      "start": 721.77,
+      "end": 725.36,
+      "text": "we can see it to get request fantastic right we've got another method here ctrl"
+    },
+    {
+      "start": 725.36,
+      "end": 725.37,
+      "text": "right we've got another method here ctrl"
+    },
+    {
+      "start": 725.37,
+      "end": 728.12,
+      "text": "right we've got another method here ctrl + M just get past it it looks like total"
+    },
+    {
+      "start": 728.12,
+      "end": 728.13,
+      "text": "+ M just get past it it looks like total"
+    },
+    {
+      "start": 728.13,
+      "end": 729.8,
+      "text": "+ M just get past it it looks like total noise we can see there's the send method"
+    },
+    {
+      "start": 729.8,
+      "end": 729.81,
+      "text": "noise we can see there's the send method"
+    },
+    {
+      "start": 729.81,
+      "end": 732.92,
+      "text": "noise we can see there's the send method oops there's the same method we could"
+    },
+    {
+      "start": 732.92,
+      "end": 732.93,
+      "text": "oops there's the same method we could"
+    },
+    {
+      "start": 732.93,
+      "end": 734.42,
+      "text": "oops there's the same method we could see here's another function call it"
+    },
+    {
+      "start": 734.42,
+      "end": 734.43,
+      "text": "see here's another function call it"
+    },
+    {
+      "start": 734.43,
+      "end": 736.82,
+      "text": "see here's another function call it looks like junk control + M to get past"
+    },
+    {
+      "start": 736.82,
+      "end": 736.83,
+      "text": "looks like junk control + M to get past"
+    },
+    {
+      "start": 736.83,
+      "end": 738.35,
+      "text": "looks like junk control + M to get past it you can see where we go in here and"
+    },
+    {
+      "start": 738.35,
+      "end": 738.36,
+      "text": "it you can see where we go in here and"
+    },
+    {
+      "start": 738.36,
+      "end": 739.55,
+      "text": "it you can see where we go in here and we've got some logic this time right so"
+    },
+    {
+      "start": 739.55,
+      "end": 739.56,
+      "text": "we've got some logic this time right so"
+    },
+    {
+      "start": 739.56,
+      "end": 742.13,
+      "text": "we've got some logic this time right so we see if status equals 200 so it's"
+    },
+    {
+      "start": 742.13,
+      "end": 742.14,
+      "text": "we see if status equals 200 so it's"
+    },
+    {
+      "start": 742.14,
+      "end": 743.78,
+      "text": "we see if status equals 200 so it's going to perform that it's performing"
+    },
+    {
+      "start": 743.78,
+      "end": 743.79,
+      "text": "going to perform that it's performing"
+    },
+    {
+      "start": 743.79,
+      "end": 745.49,
+      "text": "going to perform that it's performing that separate that get request with the"
+    },
+    {
+      "start": 745.49,
+      "end": 745.5,
+      "text": "that separate that get request with the"
+    },
+    {
+      "start": 745.5,
+      "end": 747.14,
+      "text": "that separate that get request with the send method and then it's going to look"
+    },
+    {
+      "start": 747.14,
+      "end": 747.15,
+      "text": "send method and then it's going to look"
+    },
+    {
+      "start": 747.15,
+      "end": 748.88,
+      "text": "send method and then it's going to look at some logic right so if the status is"
+    },
+    {
+      "start": 748.88,
+      "end": 748.89,
+      "text": "at some logic right so if the status is"
+    },
+    {
+      "start": 748.89,
+      "end": 751.04,
+      "text": "at some logic right so if the status is 200 well what's it gonna do next we can"
+    },
+    {
+      "start": 751.04,
+      "end": 751.05,
+      "text": "200 well what's it gonna do next we can"
+    },
+    {
+      "start": 751.05,
+      "end": 752.6,
+      "text": "200 well what's it gonna do next we can see that we've got some noise in the"
+    },
+    {
+      "start": 752.6,
+      "end": 752.61,
+      "text": "see that we've got some noise in the"
+    },
+    {
+      "start": 752.61,
+      "end": 754.43,
+      "text": "see that we've got some noise in the body of this if statement ctrl + M to"
+    },
+    {
+      "start": 754.43,
+      "end": 754.44,
+      "text": "body of this if statement ctrl + M to"
+    },
+    {
+      "start": 754.44,
+      "end": 756.65,
+      "text": "body of this if statement ctrl + M to get past the noise and we can see here"
+    },
+    {
+      "start": 756.65,
+      "end": 756.66,
+      "text": "get past the noise and we can see here"
+    },
+    {
+      "start": 756.66,
+      "end": 758.87,
+      "text": "get past the noise and we can see here that we've got right response body so if"
+    },
+    {
+      "start": 758.87,
+      "end": 758.88,
+      "text": "that we've got right response body so if"
+    },
+    {
+      "start": 758.88,
+      "end": 760.85,
+      "text": "that we've got right response body so if it's if it's a stasis of 200 it's going"
+    },
+    {
+      "start": 760.85,
+      "end": 760.86,
+      "text": "it's if it's a stasis of 200 it's going"
+    },
+    {
+      "start": 760.86,
+      "end": 762.32,
+      "text": "it's if it's a stasis of 200 it's going to get the response body and it's gonna"
+    },
+    {
+      "start": 762.32,
+      "end": 762.33,
+      "text": "to get the response body and it's gonna"
+    },
+    {
+      "start": 762.33,
+      "end": 763.4,
+      "text": "to get the response body and it's gonna write it somewhere and that somewhere"
+    },
+    {
+      "start": 763.4,
+      "end": 763.41,
+      "text": "write it somewhere and that somewhere"
+    },
+    {
+      "start": 763.41,
+      "end": 764.9,
+      "text": "write it somewhere and that somewhere it's gonna be the file path that was"
+    },
+    {
+      "start": 764.9,
+      "end": 764.91,
+      "text": "it's gonna be the file path that was"
+    },
+    {
+      "start": 764.91,
+      "end": 767.45,
+      "text": "it's gonna be the file path that was previously defined another function ctrl"
+    },
+    {
+      "start": 767.45,
+      "end": 767.46,
+      "text": "previously defined another function ctrl"
+    },
+    {
+      "start": 767.46,
+      "end": 769.52,
+      "text": "previously defined another function ctrl + M just to get past it and we can see a"
+    },
+    {
+      "start": 769.52,
+      "end": 769.53,
+      "text": "+ M just to get past it and we can see a"
+    },
+    {
+      "start": 769.53,
+      "end": 771.89,
+      "text": "+ M just to get past it and we can see a little bit more logic here so if the"
+    },
+    {
+      "start": 771.89,
+      "end": 771.9,
+      "text": "little bit more logic here so if the"
+    },
+    {
+      "start": 771.9,
+      "end": 774.02,
+      "text": "little bit more logic here so if the file exists then delete the file so if"
+    },
+    {
+      "start": 774.02,
+      "end": 774.03,
+      "text": "file exists then delete the file so if"
+    },
+    {
+      "start": 774.03,
+      "end": 775.46,
+      "text": "file exists then delete the file so if it already exists and it's gonna delete"
+    },
+    {
+      "start": 775.46,
+      "end": 775.47,
+      "text": "it already exists and it's gonna delete"
+    },
+    {
+      "start": 775.47,
+      "end": 777.11,
+      "text": "it already exists and it's gonna delete the file overwrite it or just you know"
+    },
+    {
+      "start": 777.11,
+      "end": 777.12,
+      "text": "the file overwrite it or just you know"
+    },
+    {
+      "start": 777.12,
+      "end": 780.02,
+      "text": "the file overwrite it or just you know start a new one another function looks"
+    },
+    {
+      "start": 780.02,
+      "end": 780.03,
+      "text": "start a new one another function looks"
+    },
+    {
+      "start": 780.03,
+      "end": 781.91,
+      "text": "start a new one another function looks like noise control + M let's get past it"
+    },
+    {
+      "start": 781.91,
+      "end": 781.92,
+      "text": "like noise control + M let's get past it"
+    },
+    {
+      "start": 781.92,
+      "end": 784.73,
+      "text": "like noise control + M let's get past it again save to file so it's gonna if it"
+    },
+    {
+      "start": 784.73,
+      "end": 784.74,
+      "text": "again save to file so it's gonna if it"
+    },
+    {
+      "start": 784.74,
+      "end": 787.55,
+      "text": "again save to file so it's gonna if it exists it's gonna save it and if it"
+    },
+    {
+      "start": 787.55,
+      "end": 787.56,
+      "text": "exists it's gonna save it and if it"
+    },
+    {
+      "start": 787.56,
+      "end": 788.84,
+      "text": "exists it's gonna save it and if it doesn't exist it's gonna hopefully write"
+    },
+    {
+      "start": 788.84,
+      "end": 788.85,
+      "text": "doesn't exist it's gonna hopefully write"
+    },
+    {
+      "start": 788.85,
+      "end": 790.91,
+      "text": "doesn't exist it's gonna hopefully write it anyway another function you can see"
+    },
+    {
+      "start": 790.91,
+      "end": 790.92,
+      "text": "it anyway another function you can see"
+    },
+    {
+      "start": 790.92,
+      "end": 792.68,
+      "text": "it anyway another function you can see where we're going ctrl + M just get past"
+    },
+    {
+      "start": 792.68,
+      "end": 792.69,
+      "text": "where we're going ctrl + M just get past"
+    },
+    {
+      "start": 792.69,
+      "end": 795.14,
+      "text": "where we're going ctrl + M just get past it and we can see right the the"
+    },
+    {
+      "start": 795.14,
+      "end": 795.15,
+      "text": "it and we can see right the the"
+    },
+    {
+      "start": 795.15,
+      "end": 796.37,
+      "text": "it and we can see right the the connection is gonna be closed here"
+    },
+    {
+      "start": 796.37,
+      "end": 796.38,
+      "text": "connection is gonna be closed here"
+    },
+    {
+      "start": 796.38,
+      "end": 797.75,
+      "text": "connection is gonna be closed here because obviously the job is done the"
+    },
+    {
+      "start": 797.75,
+      "end": 797.76,
+      "text": "because obviously the job is done the"
+    },
+    {
+      "start": 797.76,
+      "end": 799.25,
+      "text": "because obviously the job is done the file is written we've got another"
+    },
+    {
+      "start": 799.25,
+      "end": 799.26,
+      "text": "file is written we've got another"
+    },
+    {
+      "start": 799.26,
+      "end": 801.199,
+      "text": "file is written we've got another function ctrl + M just"
+    },
+    {
+      "start": 801.199,
+      "end": 801.209,
+      "text": "function ctrl + M just"
+    },
+    {
+      "start": 801.209,
+      "end": 803.889,
+      "text": "function ctrl + M just get past it okay if it doesn't exist"
+    },
+    {
+      "start": 803.889,
+      "end": 803.899,
+      "text": "get past it okay if it doesn't exist"
+    },
+    {
+      "start": 803.899,
+      "end": 807.739,
+      "text": "get past it okay if it doesn't exist then delete the file okay cool"
+    },
+    {
+      "start": 807.739,
+      "end": 807.749,
+      "text": "then delete the file okay cool"
+    },
+    {
+      "start": 807.749,
+      "end": 809.569,
+      "text": "then delete the file okay cool write another function looks like noise"
+    },
+    {
+      "start": 809.569,
+      "end": 809.579,
+      "text": "write another function looks like noise"
+    },
+    {
+      "start": 809.579,
+      "end": 812.21,
+      "text": "write another function looks like noise control an M we can see here this is"
+    },
+    {
+      "start": 812.21,
+      "end": 812.22,
+      "text": "control an M we can see here this is"
+    },
+    {
+      "start": 812.22,
+      "end": 813.739,
+      "text": "control an M we can see here this is actually where it's going to execute so"
+    },
+    {
+      "start": 813.739,
+      "end": 813.749,
+      "text": "actually where it's going to execute so"
+    },
+    {
+      "start": 813.749,
+      "end": 815.78,
+      "text": "actually where it's going to execute so we're going to or this is the command to"
+    },
+    {
+      "start": 815.78,
+      "end": 815.79,
+      "text": "we're going to or this is the command to"
+    },
+    {
+      "start": 815.79,
+      "end": 818.66,
+      "text": "we're going to or this is the command to execute it so we can see cmd.exe the"
+    },
+    {
+      "start": 818.66,
+      "end": 818.67,
+      "text": "execute it so we can see cmd.exe the"
+    },
+    {
+      "start": 818.67,
+      "end": 820.429,
+      "text": "execute it so we can see cmd.exe the command string being built we've got"
+    },
+    {
+      "start": 820.429,
+      "end": 820.439,
+      "text": "command string being built we've got"
+    },
+    {
+      "start": 820.439,
+      "end": 822.41,
+      "text": "command string being built we've got another function call control on M get"
+    },
+    {
+      "start": 822.41,
+      "end": 822.42,
+      "text": "another function call control on M get"
+    },
+    {
+      "start": 822.42,
+      "end": 824.15,
+      "text": "another function call control on M get past it and we can see here here's the"
+    },
+    {
+      "start": 824.15,
+      "end": 824.16,
+      "text": "past it and we can see here here's the"
+    },
+    {
+      "start": 824.16,
+      "end": 825.71,
+      "text": "past it and we can see here here's the method is the wrong method to actually"
+    },
+    {
+      "start": 825.71,
+      "end": 825.72,
+      "text": "method is the wrong method to actually"
+    },
+    {
+      "start": 825.72,
+      "end": 827.48,
+      "text": "method is the wrong method to actually execute the binary know that another"
+    },
+    {
+      "start": 827.48,
+      "end": 827.49,
+      "text": "execute the binary know that another"
+    },
+    {
+      "start": 827.49,
+      "end": 829.489,
+      "text": "execute the binary know that another function call looks like junk control"
+    },
+    {
+      "start": 829.489,
+      "end": 829.499,
+      "text": "function call looks like junk control"
+    },
+    {
+      "start": 829.499,
+      "end": 832.009,
+      "text": "function call looks like junk control and M let's get past it and what we're"
+    },
+    {
+      "start": 832.009,
+      "end": 832.019,
+      "text": "and M let's get past it and what we're"
+    },
+    {
+      "start": 832.019,
+      "end": 833.84,
+      "text": "and M let's get past it and what we're left with is our closing bracket so"
+    },
+    {
+      "start": 833.84,
+      "end": 833.85,
+      "text": "left with is our closing bracket so"
+    },
+    {
+      "start": 833.85,
+      "end": 836.389,
+      "text": "left with is our closing bracket so close down that for loop so it close"
+    },
+    {
+      "start": 836.389,
+      "end": 836.399,
+      "text": "close down that for loop so it close"
+    },
+    {
+      "start": 836.399,
+      "end": 838.46,
+      "text": "close down that for loop so it close down the the if block that we're in okay"
+    },
+    {
+      "start": 838.46,
+      "end": 838.47,
+      "text": "down the the if block that we're in okay"
+    },
+    {
+      "start": 838.47,
+      "end": 839.059,
+      "text": "down the the if block that we're in okay cool"
+    },
+    {
+      "start": 839.059,
+      "end": 839.069,
+      "text": "cool"
+    },
+    {
+      "start": 839.069,
+      "end": 840.439,
+      "text": "cool let's double check ourselves or on line"
+    },
+    {
+      "start": 840.439,
+      "end": 840.449,
+      "text": "let's double check ourselves or on line"
+    },
+    {
+      "start": 840.449,
+      "end": 842.78,
+      "text": "let's double check ourselves or on line to 9000 here we've got another function"
+    },
+    {
+      "start": 842.78,
+      "end": 842.79,
+      "text": "to 9000 here we've got another function"
+    },
+    {
+      "start": 842.79,
+      "end": 844.4,
+      "text": "to 9000 here we've got another function control and F does it exist no it"
+    },
+    {
+      "start": 844.4,
+      "end": 844.41,
+      "text": "control and F does it exist no it"
+    },
+    {
+      "start": 844.41,
+      "end": 846.739,
+      "text": "control and F does it exist no it doesn't control an M and just get to the"
+    },
+    {
+      "start": 846.739,
+      "end": 846.749,
+      "text": "doesn't control an M and just get to the"
+    },
+    {
+      "start": 846.749,
+      "end": 849.199,
+      "text": "doesn't control an M and just get to the mansion bracket and then maxium bracket"
+    },
+    {
+      "start": 849.199,
+      "end": 849.209,
+      "text": "mansion bracket and then maxium bracket"
+    },
+    {
+      "start": 849.209,
+      "end": 850.999,
+      "text": "mansion bracket and then maxium bracket is actually the last line of our code so"
+    },
+    {
+      "start": 850.999,
+      "end": 851.009,
+      "text": "is actually the last line of our code so"
+    },
+    {
+      "start": 851.009,
+      "end": 853.46,
+      "text": "is actually the last line of our code so here is the bad guys code and we've"
+    },
+    {
+      "start": 853.46,
+      "end": 853.47,
+      "text": "here is the bad guys code and we've"
+    },
+    {
+      "start": 853.47,
+      "end": 855.619,
+      "text": "here is the bad guys code and we've extracted that from like 5,000 lines of"
+    },
+    {
+      "start": 855.619,
+      "end": 855.629,
+      "text": "extracted that from like 5,000 lines of"
+    },
+    {
+      "start": 855.629,
+      "end": 856.79,
+      "text": "extracted that from like 5,000 lines of code or whatever it was to begin with"
+    },
+    {
+      "start": 856.79,
+      "end": 856.8,
+      "text": "code or whatever it was to begin with"
+    },
+    {
+      "start": 856.8,
+      "end": 858.799,
+      "text": "code or whatever it was to begin with and we can now see the logic so we've"
+    },
+    {
+      "start": 858.799,
+      "end": 858.809,
+      "text": "and we can now see the logic so we've"
+    },
+    {
+      "start": 858.809,
+      "end": 860.96,
+      "text": "and we can now see the logic so we've got W script shell we could see the file"
+    },
+    {
+      "start": 860.96,
+      "end": 860.97,
+      "text": "got W script shell we could see the file"
+    },
+    {
+      "start": 860.97,
+      "end": 862.85,
+      "text": "got W script shell we could see the file path we can see the stream we could see"
+    },
+    {
+      "start": 862.85,
+      "end": 862.86,
+      "text": "path we can see the stream we could see"
+    },
+    {
+      "start": 862.86,
+      "end": 864.59,
+      "text": "path we can see the stream we could see the wind HTTP request we've got the key"
+    },
+    {
+      "start": 864.59,
+      "end": 864.6,
+      "text": "the wind HTTP request we've got the key"
+    },
+    {
+      "start": 864.6,
+      "end": 866.629,
+      "text": "the wind HTTP request we've got the key Network indicator which if you reach out"
+    },
+    {
+      "start": 866.629,
+      "end": 866.639,
+      "text": "Network indicator which if you reach out"
+    },
+    {
+      "start": 866.639,
+      "end": 867.71,
+      "text": "Network indicator which if you reach out to is actually going to be actually"
+    },
+    {
+      "start": 867.71,
+      "end": 867.72,
+      "text": "to is actually going to be actually"
+    },
+    {
+      "start": 867.72,
+      "end": 869.48,
+      "text": "to is actually going to be actually usable and we can see if the response"
+    },
+    {
+      "start": 869.48,
+      "end": 869.49,
+      "text": "usable and we can see if the response"
+    },
+    {
+      "start": 869.49,
+      "end": 871.759,
+      "text": "usable and we can see if the response body sorry if the status is 200 the"
+    },
+    {
+      "start": 871.759,
+      "end": 871.769,
+      "text": "body sorry if the status is 200 the"
+    },
+    {
+      "start": 871.769,
+      "end": 873.169,
+      "text": "body sorry if the status is 200 the response warranty body's going to be"
+    },
+    {
+      "start": 873.169,
+      "end": 873.179,
+      "text": "response warranty body's going to be"
+    },
+    {
+      "start": 873.179,
+      "end": 874.97,
+      "text": "response warranty body's going to be written to the file name that was"
+    },
+    {
+      "start": 874.97,
+      "end": 874.98,
+      "text": "written to the file name that was"
+    },
+    {
+      "start": 874.98,
+      "end": 876.53,
+      "text": "written to the file name that was previously defined and then we've got"
+    },
+    {
+      "start": 876.53,
+      "end": 876.54,
+      "text": "previously defined and then we've got"
+    },
+    {
+      "start": 876.54,
+      "end": 877.879,
+      "text": "previously defined and then we've got the wrong method which is you're going"
+    },
+    {
+      "start": 877.879,
+      "end": 877.889,
+      "text": "the wrong method which is you're going"
+    },
+    {
+      "start": 877.889,
+      "end": 880.039,
+      "text": "the wrong method which is you're going to execute the the the file on your"
+    },
+    {
+      "start": 880.039,
+      "end": 880.049,
+      "text": "to execute the the the file on your"
+    },
+    {
+      "start": 880.049,
+      "end": 882.199,
+      "text": "to execute the the the file on your machine so hopefully you found that"
+    },
+    {
+      "start": 882.199,
+      "end": 882.209,
+      "text": "machine so hopefully you found that"
+    },
+    {
+      "start": 882.209,
+      "end": 884.72,
+      "text": "machine so hopefully you found that useful super super easy method that you"
+    },
+    {
+      "start": 884.72,
+      "end": 884.73,
+      "text": "useful super super easy method that you"
+    },
+    {
+      "start": 884.73,
+      "end": 886.429,
+      "text": "useful super super easy method that you can use in your environment to skip past"
+    },
+    {
+      "start": 886.429,
+      "end": 886.439,
+      "text": "can use in your environment to skip past"
+    },
+    {
+      "start": 886.439,
+      "end": 888.35,
+      "text": "can use in your environment to skip past noisy cody's and ctrl + m to find that"
+    },
+    {
+      "start": 888.35,
+      "end": 888.36,
+      "text": "noisy cody's and ctrl + m to find that"
+    },
+    {
+      "start": 888.36,
+      "end": 889.999,
+      "text": "noisy cody's and ctrl + m to find that matching bracket and hopefully that will"
+    },
+    {
+      "start": 889.999,
+      "end": 890.009,
+      "text": "matching bracket and hopefully that will"
+    },
+    {
+      "start": 890.009,
+      "end": 892.429,
+      "text": "matching bracket and hopefully that will help you wade your way through these"
+    },
+    {
+      "start": 892.429,
+      "end": 892.439,
+      "text": "help you wade your way through these"
+    },
+    {
+      "start": 892.439,
+      "end": 893.96,
+      "text": "help you wade your way through these these kinds of noisy samples that you"
+    },
+    {
+      "start": 893.96,
+      "end": 893.97,
+      "text": "these kinds of noisy samples that you"
+    },
+    {
+      "start": 893.97,
+      "end": 894.739,
+      "text": "these kinds of noisy samples that you see in the wild"
+    },
+    {
+      "start": 894.739,
+      "end": 894.749,
+      "text": "see in the wild"
+    },
+    {
+      "start": 894.749,
+      "end": 898.16,
+      "text": "see in the wild ok thanks guys all the best"
+    }
+  ],
+  "timestamp": "2025-08-15T09:23:50.827Z"
+}
