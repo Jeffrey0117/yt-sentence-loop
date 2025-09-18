@@ -1,5 +1,7 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from 'react';
+import { subtitleCache } from '../lib/subtitleCache';
+
 // --- 型別 ---
 type Cue = { start: number; end: number; text: string };
 declare global {
@@ -25,6 +27,14 @@ export default function Page() {
   const [bookmarks, setBookmarks] = useState<Set<number>>(new Set());
   const [showBookmarksOnly, setShowBookmarksOnly] = useState(false);
   const [repeatDelay, setRepeatDelay] = useState(0);
+  const [customKeys, setCustomKeys] = useState({
+    prev: 'j',
+    next: 'k',
+    loop: 'l',
+    replay: 'r',
+    playPause: ' '
+  });
+  const [showKeySettings, setShowKeySettings] = useState(false);
   const playerRef = useRef<any>(null);
   const timerRef = useRef<any>(null);
   const url = useMemo(() => `https://www.youtube.com/watch?v=${videoId}`, [videoId]);
@@ -81,12 +91,31 @@ export default function Page() {
     setErr(null);
     
     try {
+      // 先檢查快取
+      const cachedCues = subtitleCache.get(validatedId);
+      if (cachedCues) {
+        console.log('使用快取的字幕:', validatedId);
+        setCues(cachedCues);
+        setFilteredCues(cachedCues);
+        setIndex(0);
+        setSearchTerm('');
+        setLoading(false);
+        return;
+      }
+
+      // 快取未命中，從 API 獲取
       const r = await fetch(`/api/transcript?videoId=${encodeURIComponent(validatedId)}`);
       if (!r.ok) {
         const errorData = await r.json().catch(() => ({}));
         throw new Error(errorData.error || `${r.status} ${r.statusText}`);
       }
       const data = await r.json();
+      
+      // 存入快取
+      if (data.cues && data.cues.length > 0) {
+        subtitleCache.set(validatedId, data.cues);
+      }
+      
       setCues(data.cues || []);
       setFilteredCues(data.cues || []);
       setIndex(0);
@@ -131,6 +160,24 @@ export default function Page() {
       }
     }
   }, [videoId]);
+
+  // 載入自定義快捷鍵
+  useEffect(() => {
+    const savedKeys = localStorage.getItem('customKeys');
+    if (savedKeys) {
+      try {
+        setCustomKeys(JSON.parse(savedKeys));
+      } catch (e) {
+        console.error('Failed to load custom keys:', e);
+      }
+    }
+  }, []);
+
+  // 保存自定義快捷鍵
+  function saveCustomKeys(newKeys: typeof customKeys) {
+    setCustomKeys(newKeys);
+    localStorage.setItem('customKeys', JSON.stringify(newKeys));
+  }
 
   // 搜尋功能
   function handleSearch(term: string) {
@@ -272,19 +319,22 @@ export default function Page() {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.target && (e.target as any).tagName === 'INPUT') return;
-      if (e.key === 'j' || e.key === 'J') prev();
-      if (e.key === 'k' || e.key === 'K') next();
-      if (e.key === 'l' || e.key === 'L') setLooping(v => !v);
-      if (e.key === ' ') {
+      
+      const key = e.key.toLowerCase();
+      
+      if (key === customKeys.prev.toLowerCase()) prev();
+      if (key === customKeys.next.toLowerCase()) next();
+      if (key === customKeys.loop.toLowerCase()) setLooping(v => !v);
+      if (key === customKeys.playPause) {
         e.preventDefault();
         const p = playerRef.current;
         if (p?.getPlayerState?.() === 1) p.pauseVideo?.(); else p?.playVideo?.();
       }
-      if (e.key === 'r' || e.key === 'R') playSentence(index);
+      if (key === customKeys.replay.toLowerCase()) playSentence(index);
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [index]);
+  }, [index, customKeys]);
   return (
     <div className={`min-h-screen grid grid-cols-1 md:grid-cols-[1fr_380px] gap-4 p-4 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-black'}`}>
       <div className="space-y-3">
@@ -369,11 +419,17 @@ export default function Page() {
         )}
         <div className="flex items-center gap-3">
           <button className={`px-3 py-1 border rounded ${darkMode ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`} onClick={()=>setLooping(v=>!v)}>
-            循環本句：{looping? '開' : '關'} (L)
+            循環本句：{looping? '開' : '關'} ({customKeys.loop.toUpperCase()})
           </button>
-          <button className={`px-3 py-1 border rounded ${darkMode ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`} onClick={prev}>上一句 (J)</button>
-          <button className={`px-3 py-1 border rounded ${darkMode ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`} onClick={next}>下一句 (K)</button>
-          <button className={`px-3 py-1 border rounded ${darkMode ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`} onClick={()=>playSentence(index)}>重播 (R)</button>
+          <button className={`px-3 py-1 border rounded ${darkMode ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`} onClick={prev}>上一句 ({customKeys.prev.toUpperCase()})</button>
+          <button className={`px-3 py-1 border rounded ${darkMode ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`} onClick={next}>下一句 ({customKeys.next.toUpperCase()})</button>
+          <button className={`px-3 py-1 border rounded ${darkMode ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`} onClick={()=>playSentence(index)}>重播 ({customKeys.replay.toUpperCase()})</button>
+          <button
+            className={`px-3 py-1 border rounded ${darkMode ? 'border-gray-600 hover:bg-gray-800' : 'border-gray-300 hover:bg-gray-100'}`}
+            onClick={() => setShowKeySettings(!showKeySettings)}
+          >
+            ⚙️ 快捷鍵
+          </button>
           <label className="ml-2">速度</label>
           <select className={`border rounded px-2 py-1 ${darkMode ? 'bg-gray-800 border-gray-600 text-white' : 'bg-white border-gray-300'}`} value={rate}
                   onChange={(e)=> setPlaybackRate(Number(e.target.value))}>
@@ -420,6 +476,83 @@ export default function Page() {
                   提示：請確認影片 ID 正確，且影片有可用的字幕
                 </p>
               </div>
+            </div>
+          </div>
+        )}
+        
+        {/* 快捷鍵設定面板 */}
+        {showKeySettings && (
+          <div className={`p-4 border rounded ${darkMode ? 'bg-gray-800 border-gray-600' : 'bg-gray-50 border-gray-300'}`}>
+            <div className="flex items-center justify-between mb-3">
+              <h3 className="font-semibold">自定義快捷鍵</h3>
+              <button
+                onClick={() => setShowKeySettings(false)}
+                className={`px-2 py-1 text-sm rounded ${darkMode ? 'hover:bg-gray-700' : 'hover:bg-gray-200'}`}
+              >
+                ✕
+              </button>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              <div>
+                <label className="block text-sm mb-1">上一句</label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  value={customKeys.prev}
+                  onChange={(e) => saveCustomKeys({...customKeys, prev: e.target.value.toLowerCase()})}
+                  className={`w-full px-2 py-1 text-center border rounded ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300'}`}
+                />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">下一句</label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  value={customKeys.next}
+                  onChange={(e) => saveCustomKeys({...customKeys, next: e.target.value.toLowerCase()})}
+                  className={`w-full px-2 py-1 text-center border rounded ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300'}`}
+                />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">循環模式</label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  value={customKeys.loop}
+                  onChange={(e) => saveCustomKeys({...customKeys, loop: e.target.value.toLowerCase()})}
+                  className={`w-full px-2 py-1 text-center border rounded ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300'}`}
+                />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">重播</label>
+                <input
+                  type="text"
+                  maxLength={1}
+                  value={customKeys.replay}
+                  onChange={(e) => saveCustomKeys({...customKeys, replay: e.target.value.toLowerCase()})}
+                  className={`w-full px-2 py-1 text-center border rounded ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300'}`}
+                />
+              </div>
+              <div>
+                <label className="block text-sm mb-1">播放/暫停</label>
+                <select
+                  value={customKeys.playPause}
+                  onChange={(e) => saveCustomKeys({...customKeys, playPause: e.target.value})}
+                  className={`w-full px-2 py-1 border rounded ${darkMode ? 'bg-gray-700 border-gray-600' : 'bg-white border-gray-300'}`}
+                >
+                  <option value=" ">空白鍵</option>
+                  <option value="p">P</option>
+                  <option value="enter">Enter</option>
+                </select>
+              </div>
+            </div>
+            <div className="mt-3 flex gap-2">
+              <button
+                onClick={() => saveCustomKeys({prev: 'j', next: 'k', loop: 'l', replay: 'r', playPause: ' '})}
+                className={`px-3 py-1 text-sm rounded ${darkMode ? 'bg-gray-700 hover:bg-gray-600' : 'bg-gray-200 hover:bg-gray-300'}`}
+              >
+                重設為預設值
+              </button>
             </div>
           </div>
         )}
