@@ -25,15 +25,56 @@ function formatTime(seconds: number): string {
 
 export const dynamic = 'force-dynamic';
 
+// 驗證 YouTube 影片 ID
+function validateVideoId(videoId: string): boolean {
+  if (!videoId || typeof videoId !== 'string') {
+    return false;
+  }
+  
+  // YouTube 影片 ID 必須是 11 個字符，只能包含字母、數字、底線和破折號
+  return /^[a-zA-Z0-9_-]{11}$/.test(videoId);
+}
+
+// 清理和驗證語言參數
+function validateLangParam(lang: string | null): string {
+  if (!lang) return 'zh-TW,zh,en';
+  
+  // 只允許特定的語言代碼格式
+  const validLangPattern = /^[a-zA-Z]{2}(-[a-zA-Z]{2,4})?(,[a-zA-Z]{2}(-[a-zA-Z]{2,4})?)*$/;
+  
+  if (!validLangPattern.test(lang)) {
+    return 'zh-TW,zh,en'; // 回退到預設值
+  }
+  
+  return lang;
+}
+
 export async function GET(req: NextRequest) {
   const videoId = req.nextUrl.searchParams.get('videoId');
-  const lang = req.nextUrl.searchParams.get('lang') || 'zh-TW,zh,en';
-  // 預設強制刷新快取
-  const forceRefresh = req.nextUrl.searchParams.get('forceRefresh') !== 'false';
-
+  const langParam = req.nextUrl.searchParams.get('lang');
+  const forceRefreshParam = req.nextUrl.searchParams.get('forceRefresh');
+  
+  // 驗證必要參數
   if (!videoId) {
-    return NextResponse.json({ error: 'missing videoId' }, { status: 400 });
+    return NextResponse.json({
+      error: 'missing videoId',
+      message: 'videoId parameter is required'
+    }, { status: 400 });
   }
+
+  // 驗證影片 ID 格式
+  if (!validateVideoId(videoId)) {
+    return NextResponse.json({
+      error: 'invalid videoId',
+      message: 'videoId must be a valid 11-character YouTube video ID'
+    }, { status: 400 });
+  }
+
+  // 驗證和清理語言參數
+  const lang = validateLangParam(langParam);
+  
+  // 驗證 forceRefresh 參數
+  const forceRefresh = forceRefreshParam !== 'false';
 
   try {
     // 強制刷新或使用快取
