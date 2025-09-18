@@ -1,70 +1,59 @@
-# yt-sentence-loop
+# YouTube 逐句循環播放器
 
-A Next.js web app for looping YouTube videos sentence by sentence with auto-downloaded captions.
-Perfect for language learning, listening practice, and deep video study.
+一個幫助語言學習的 YouTube 播放器，可以逐句循環播放影片字幕。
 
-## Features
+## 功能
 
-- Fetches and parses YouTube captions automatically (via yt-dlp)
-- Sentence-by-sentence looping and navigation
-- Keyboard shortcuts for fast control
-- Clean, responsive UI (Tailwind CSS)
-- Supports both manual and auto-generated captions
+- 自動抓取 YouTube 影片字幕
+- 逐句循環播放
+- 鍵盤快捷鍵控制
+- 播放速度調整
+- 響應式介面
 
-## Quick Start
+## 使用方法
 
-1. Install dependencies:
-
+1. 安裝依賴：
    ```bash
    pnpm install
-   # or
-   npm install
    ```
 
-2. Make sure you have `yt-dlp` installed and available in your PATH.
+2. 安裝 yt-dlp：
+   - Windows: `choco install yt-dlp`
+   - macOS: `brew install yt-dlp`
+   - Linux: `sudo pip3 install yt-dlp`
 
-3. Start the dev server:
-
+3. 啟動：
    ```bash
    pnpm dev
-   # or
-   npm run dev
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) and enter a YouTube video ID or URL.
+4. 開啟 http://localhost:3000，貼上 YouTube 影片連結即可使用
 
-## Requirements
+## 鍵盤快捷鍵
 
-- Node.js 18+
-- yt-dlp (for caption download)
-- ffmpeg (optional, for advanced yt-dlp features)
+- `J` - 上一句
+- `K` - 下一句
+- `L` - 開關循環模式
+- `R` - 重播當前句子
+- `空白鍵` - 播放/暫停
 
-## License
+## 專案結構
 
-MIT
-
-# yt-sentence-loop
-
-一個最小可跑的 Next.js 專案範本：
-
-- 前端：YouTube IFrame API + 右側逐字稿清單 + 逐句循環/上一句/下一句/重播/變速
-- 後端：/api/transcript 以 `yt-dlp` 下載字幕（優先作者字幕，否則自動字幕），解析 VTT → { start, end, text }
-- 先不接 Whisper，無字幕先回覆 404（之後可接 ASR）
-
-## 快速開始
-
-```bash
-# 1) 建專案與套件
-pnpm dlx create-next-app@latest yt-sentence-loop --ts --app --eslint --tailwind --src-dir false --import-alias @/*
-cd yt-sentence-loop
-pnpm add vtt-to-json
-# 2) 把下列檔案覆蓋到專案（/app、/components、/lib 目錄等）
-# 3) 安裝 yt-dlp（必須在你的部署環境能呼叫）
-#    macOS:  brew install yt-dlp
-#    Linux:  sudo pipx install yt-dlp   或  sudo pip3 install yt-dlp
-#    Windows: choco install yt-dlp
-# 4) 開發
-pnpm dev
+```
+├── app/
+│   ├── page.tsx          # 主頁面
+│   └── api/transcript/   # 字幕 API
+├── lib/
+│   ├── transcript.ts     # 字幕下載
+│   ├── vtt.ts           # 字幕解析
+│   └── transcriptCache.ts # 快取管理
+└── plan.md              # 專案規劃文件
 ```
 
-> 部署注意：Vercel 預設無法執行 `yt-dlp`。建議先在自管的 Node 伺服器或 Docker 容器內跑（例如 Fly.io、Render、Railway、自架 VPS）。
+## 部署
+
+建議部署到支援執行系統指令的平台（如 Fly.io、Render、Railway），因為需要執行 yt-dlp。
+
+## 授權
+
+MIT
