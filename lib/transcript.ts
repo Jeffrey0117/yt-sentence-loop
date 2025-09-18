@@ -25,8 +25,10 @@ export async function getTranscriptByYtDlp(videoId: string, lang = 'en,*') {
     for await (const data of listProcess.stdout) {
       const text = data.toString();
       output += text;
-      // 檢查是否有可用的字幕（忽略標題行）
-      if (text.includes('Available subtitles for') || text.match(/\w+\s+\w+\s+[\w-]+/)) {
+      // 檢查是否有可用的字幕（包括自動字幕和人工字幕）
+      if (text.includes('Available subtitles for') ||
+          text.includes('Available automatic captions') ||
+          text.match(/\w+\s+\w+\s+[\w-]+/)) {
         hasSubtitles = true;
       }
     }
@@ -46,7 +48,7 @@ export async function getTranscriptByYtDlp(videoId: string, lang = 'en,*') {
     
     console.log('Subtitles available, proceeding with download...');
     
-    // 下載字幕的參數
+    // 下載字幕的參數，添加速率限制和重試機制
     const args = [
       url,
       '--skip-download',
@@ -60,7 +62,12 @@ export async function getTranscriptByYtDlp(videoId: string, lang = 'en,*') {
       '--no-check-certificate',
       '--ignore-errors',
       '--no-call-home',
-      '--no-progress'
+      '--no-progress',
+      '--sleep-interval', '1',
+      '--max-sleep-interval', '5',
+      '--retries', '3',
+      '--extractor-retries', '3',
+      '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
     ];
     
     console.log('Running yt-dlp with args:', args.join(' '));
@@ -186,10 +193,30 @@ export async function getTranscriptByYtDlp(videoId: string, lang = 'en,*') {
 }
 async function run(cmd: string, args: string[]) {
   return new Promise<void>((resolve, reject) => {
-    const p = spawn(cmd, args, { stdio: 'inherit' });
+    const p = spawn(cmd, args, { stdio: ['ignore', 'pipe', 'pipe'] });
+    
+    let stdout = '';
+    let stderr = '';
+    
+    p.stdout?.on('data', (data) => {
+      const text = data.toString();
+      stdout += text;
+      console.log(text);
+    });
+    
+    p.stderr?.on('data', (data) => {
+      const text = data.toString();
+      stderr += text;
+      console.error(text);
+    });
+    
     p.on('error', reject);
     p.on('exit', (code) => {
-      if (code === 0) resolve(); else reject(new Error(`${cmd} exit ${code}`));
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(new Error(`${cmd} exit ${code}. stderr: ${stderr}`));
+      }
     });
   });
 }
